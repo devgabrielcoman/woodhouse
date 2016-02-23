@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Woodhouse_Example', :exclusive => true do
+  pod 'Woodhouse', :path => '../'
+end
+
+target 'Woodhouse_Tests', :exclusive => true do
+  pod 'Woodhouse', :path => '../'
+
+  
+end

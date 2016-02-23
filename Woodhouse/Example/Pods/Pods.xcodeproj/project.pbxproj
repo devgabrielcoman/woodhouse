@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		143A15CD2BE53A01C23C22B3A4BDCE68 /* Woodhouse-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 34640D034FC41B2C6065755DDDBEE354 /* Woodhouse-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15F54860D14DAF8C44416FBE0D976B90 /* Woodhouse.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755E1C1FE4467F3978C5C1B444F2142B /* Woodhouse.bundle */; };
+		2F28B124E3ECF94409993F884916C128 /* Pods-Woodhouse_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9212BA9A1B63E10EAE38EBB4C92259 /* Pods-Woodhouse_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FC2BE9DD586E364A2F81B80F1E2031 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20905834C0316636D4F5355FE05793E /* Foundation.framework */; };
+		6859F59393B607DB5BBE5EF30B150A92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20905834C0316636D4F5355FE05793E /* Foundation.framework */; };
+		7F835BB8170E27D18020FD24A7727E0D /* Pods-Woodhouse_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F55F70BDF72A5FD5916AD11C3DF10B2 /* Pods-Woodhouse_Example-dummy.m */; };
+		826E09934D44AA43A67565CF8F4E630E /* Woodhouse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124CD9DEA538386186A74C9004DFD83 /* Woodhouse-dummy.m */; };
+		A993B6FC2F318ED44B601FFFC16E9F33 /* Pods-Woodhouse_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F53455736E683B1E2A43405C5F971CB /* Pods-Woodhouse_Tests-dummy.m */; };
+		AA2F197B715B24B1FF450D14194EF7B3 /* Pods-Woodhouse_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F5DC9BEFB219021134702768C1C18EA /* Pods-Woodhouse_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C123C60E99E227536C5DFE13CA62DC18 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC21F51D9BB8FC5CA4BA478A494EAE16 /* ReplaceMe.swift */; };
+		FE43C8007A7EBF7D65AEDEBD24505FDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20905834C0316636D4F5355FE05793E /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35EFD45EFA521EC95B8A60DAD5B2D088 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75237868B200EF0C27F0E8734C46A0A4;
+			remoteInfo = Woodhouse;
+		};
+		4F3944F2382D27F7EED277E2E228C4FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F6BFC24DAA7FBF43185BB7E1FA96A7A;
+			remoteInfo = "Woodhouse-Woodhouse";
+		};
+		CB5AEBD3C58A026BB20B28F7A2811631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75237868B200EF0C27F0E8734C46A0A4;
+			remoteInfo = Woodhouse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0220FAF8A4DDF51F872D897D1BC5F56B /* Woodhouse.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Woodhouse.modulemap; sourceTree = "<group>"; };
+		0338EB6F8882F4D234FA3A8A18370BCA /* Pods-Woodhouse_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Woodhouse_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		17FE0649E1113763FFE488B2C491EC33 /* Woodhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Woodhouse.xcconfig; sourceTree = "<group>"; };
+		2124CD9DEA538386186A74C9004DFD83 /* Woodhouse-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Woodhouse-dummy.m"; sourceTree = "<group>"; };
+		2F55F70BDF72A5FD5916AD11C3DF10B2 /* Pods-Woodhouse_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Woodhouse_Example-dummy.m"; sourceTree = "<group>"; };
+		34640D034FC41B2C6065755DDDBEE354 /* Woodhouse-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Woodhouse-umbrella.h"; sourceTree = "<group>"; };
+		37B4EF3E3E5A4DEBC61C819631BEAB6A /* Pods_Woodhouse_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Woodhouse_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F53455736E683B1E2A43405C5F971CB /* Pods-Woodhouse_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Woodhouse_Tests-dummy.m"; sourceTree = "<group>"; };
+		45D2B840B845B7888DBAB21B78C9F870 /* Woodhouse-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Woodhouse-Private.xcconfig"; sourceTree = "<group>"; };
+		4F38ED4DC3311349C87051ED70F6561E /* Pods-Woodhouse_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Woodhouse_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		597C71184936B033CBD422E85051745E /* Pods-Woodhouse_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Woodhouse_Tests.modulemap"; sourceTree = "<group>"; };
+		61FA4FA4D89F05ECA935D0D7FEDB4CDA /* Woodhouse-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Woodhouse-prefix.pch"; sourceTree = "<group>"; };
+		6AF383139620E2B68B7F2220717BFC48 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71EEBF7282D6A8F8EC8BB7F8E20B8289 /* Pods-Woodhouse_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Woodhouse_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7229A854E55A94F144BC0BE721A6C2E5 /* Pods-Woodhouse_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Woodhouse_Tests-resources.sh"; sourceTree = "<group>"; };
+		73D70DC2F57ECF7F1A0745056EB3C145 /* Pods-Woodhouse_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Woodhouse_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		755E1C1FE4467F3978C5C1B444F2142B /* Woodhouse.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Woodhouse.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A38C4E96C4B0FF02F731F43B185EFCE /* Pods-Woodhouse_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Woodhouse_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8F5DC9BEFB219021134702768C1C18EA /* Pods-Woodhouse_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Woodhouse_Example-umbrella.h"; sourceTree = "<group>"; };
+		9D0C4714EAE0D6B72CD69B8DF897BB66 /* Pods-Woodhouse_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Woodhouse_Example.modulemap"; sourceTree = "<group>"; };
+		AC21DD05E6A011F0034B940A015E02F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0154AF8B87CD61D899823313E7D0E96 /* Pods-Woodhouse_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Woodhouse_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B3D2FC310591A1C2C656AFEDE276BE01 /* Pods_Woodhouse_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Woodhouse_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC94475AFA875BACF89E96FB394D4854 /* Woodhouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Woodhouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1D59307667F3EE503468544FFDE65F3 /* Pods-Woodhouse_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Woodhouse_Example-resources.sh"; sourceTree = "<group>"; };
+		D7EFC7FE13D8B1FF218BF2AB8323842C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8287D98DC4A31F739A4A492E5F3AB55 /* Pods-Woodhouse_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Woodhouse_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DC9212BA9A1B63E10EAE38EBB4C92259 /* Pods-Woodhouse_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Woodhouse_Tests-umbrella.h"; sourceTree = "<group>"; };
+		DD401130314D0A36DCAEE4613B45AF37 /* Pods-Woodhouse_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Woodhouse_Example-frameworks.sh"; sourceTree = "<group>"; };
+		EC21F51D9BB8FC5CA4BA478A494EAE16 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		F04D69AA46C1B9A74079436779120E50 /* Pods-Woodhouse_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Woodhouse_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		F20905834C0316636D4F5355FE05793E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FA8C3BD39E56DFD2A32C6451344FC74E /* Pods-Woodhouse_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Woodhouse_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3025F877DB5D2893693F553548285915 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE43C8007A7EBF7D65AEDEBD24505FDE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1C2784966FCB9A19D4B0510A7B9CDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B98E0B55D7B0DA96764B563E0CFD2183 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FC2BE9DD586E364A2F81B80F1E2031 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C039DC348A2305DDB514D11626EC6AEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6859F59393B607DB5BBE5EF30B150A92 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BB5769CF141742F0C29E16073995BC1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC21DD05E6A011F0034B940A015E02F1 /* Info.plist */,
+				0220FAF8A4DDF51F872D897D1BC5F56B /* Woodhouse.modulemap */,
+				17FE0649E1113763FFE488B2C491EC33 /* Woodhouse.xcconfig */,
+				45D2B840B845B7888DBAB21B78C9F870 /* Woodhouse-Private.xcconfig */,
+				2124CD9DEA538386186A74C9004DFD83 /* Woodhouse-dummy.m */,
+				61FA4FA4D89F05ECA935D0D7FEDB4CDA /* Woodhouse-prefix.pch */,
+				34640D034FC41B2C6065755DDDBEE354 /* Woodhouse-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Woodhouse";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F20905834C0316636D4F5355FE05793E /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		57F2079648B70A126D32C4941077623B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F89F6B6AF7F0A21600BBC6ACB11E962E /* Woodhouse */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		700BD3668AF747AE2B6BEC281B1D81AC /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BACCC40E2FCD5B1A928946A7C093B484 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		7972E20B050B5A3A5DA0554453317A6E /* Pods-Woodhouse_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D7EFC7FE13D8B1FF218BF2AB8323842C /* Info.plist */,
+				597C71184936B033CBD422E85051745E /* Pods-Woodhouse_Tests.modulemap */,
+				D8287D98DC4A31F739A4A492E5F3AB55 /* Pods-Woodhouse_Tests-acknowledgements.markdown */,
+				FA8C3BD39E56DFD2A32C6451344FC74E /* Pods-Woodhouse_Tests-acknowledgements.plist */,
+				3F53455736E683B1E2A43405C5F971CB /* Pods-Woodhouse_Tests-dummy.m */,
+				F04D69AA46C1B9A74079436779120E50 /* Pods-Woodhouse_Tests-frameworks.sh */,
+				7229A854E55A94F144BC0BE721A6C2E5 /* Pods-Woodhouse_Tests-resources.sh */,
+				DC9212BA9A1B63E10EAE38EBB4C92259 /* Pods-Woodhouse_Tests-umbrella.h */,
+				0338EB6F8882F4D234FA3A8A18370BCA /* Pods-Woodhouse_Tests.debug.xcconfig */,
+				4F38ED4DC3311349C87051ED70F6561E /* Pods-Woodhouse_Tests.release.xcconfig */,
+			);
+			name = "Pods-Woodhouse_Tests";
+			path = "Target Support Files/Pods-Woodhouse_Tests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				57F2079648B70A126D32C4941077623B /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				C77BBCAF299915C4DE5AF07F6D3469A3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BACCC40E2FCD5B1A928946A7C093B484 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC21F51D9BB8FC5CA4BA478A494EAE16 /* ReplaceMe.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C77BBCAF299915C4DE5AF07F6D3469A3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F122493C6D5DEB5976534D61A654E106 /* Pods-Woodhouse_Example */,
+				7972E20B050B5A3A5DA0554453317A6E /* Pods-Woodhouse_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3D2FC310591A1C2C656AFEDE276BE01 /* Pods_Woodhouse_Example.framework */,
+				37B4EF3E3E5A4DEBC61C819631BEAB6A /* Pods_Woodhouse_Tests.framework */,
+				755E1C1FE4467F3978C5C1B444F2142B /* Woodhouse.bundle */,
+				BC94475AFA875BACF89E96FB394D4854 /* Woodhouse.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F122493C6D5DEB5976534D61A654E106 /* Pods-Woodhouse_Example */ = {
+			isa = PBXGroup;
+			children = (
+				6AF383139620E2B68B7F2220717BFC48 /* Info.plist */,
+				9D0C4714EAE0D6B72CD69B8DF897BB66 /* Pods-Woodhouse_Example.modulemap */,
+				B0154AF8B87CD61D899823313E7D0E96 /* Pods-Woodhouse_Example-acknowledgements.markdown */,
+				73D70DC2F57ECF7F1A0745056EB3C145 /* Pods-Woodhouse_Example-acknowledgements.plist */,
+				2F55F70BDF72A5FD5916AD11C3DF10B2 /* Pods-Woodhouse_Example-dummy.m */,
+				DD401130314D0A36DCAEE4613B45AF37 /* Pods-Woodhouse_Example-frameworks.sh */,
+				C1D59307667F3EE503468544FFDE65F3 /* Pods-Woodhouse_Example-resources.sh */,
+				8F5DC9BEFB219021134702768C1C18EA /* Pods-Woodhouse_Example-umbrella.h */,
+				8A38C4E96C4B0FF02F731F43B185EFCE /* Pods-Woodhouse_Example.debug.xcconfig */,
+				71EEBF7282D6A8F8EC8BB7F8E20B8289 /* Pods-Woodhouse_Example.release.xcconfig */,
+			);
+			name = "Pods-Woodhouse_Example";
+			path = "Target Support Files/Pods-Woodhouse_Example";
+			sourceTree = "<group>";
+		};
+		F89F6B6AF7F0A21600BBC6ACB11E962E /* Woodhouse */ = {
+			isa = PBXGroup;
+			children = (
+				700BD3668AF747AE2B6BEC281B1D81AC /* Pod */,
+				0BB5769CF141742F0C29E16073995BC1 /* Support Files */,
+			);
+			name = Woodhouse;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		116398ADA337B7B7ACB5B551BB735E76 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2F197B715B24B1FF450D14194EF7B3 /* Pods-Woodhouse_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16366D29A95817344619229BA059BF2F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				143A15CD2BE53A01C23C22B3A4BDCE68 /* Woodhouse-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85AA0A7C8876FB621E808B343779F311 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F28B124E3ECF94409993F884916C128 /* Pods-Woodhouse_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0F6BFC24DAA7FBF43185BB7E1FA96A7A /* Woodhouse-Woodhouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79A07CA1FFFC37085278B04CDDEFDF0C /* Build configuration list for PBXNativeTarget "Woodhouse-Woodhouse" */;
+			buildPhases = (
+				5C26D1667F0C46B5ADF43C9168B4C5A1 /* Sources */,
+				AD1C2784966FCB9A19D4B0510A7B9CDF /* Frameworks */,
+				3337856E7BB1914085084FA63995618B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Woodhouse-Woodhouse";
+			productName = "Woodhouse-Woodhouse";
+			productReference = 755E1C1FE4467F3978C5C1B444F2142B /* Woodhouse.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		75237868B200EF0C27F0E8734C46A0A4 /* Woodhouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F78C587A6F9EF3DEE5051E3FF94A662D /* Build configuration list for PBXNativeTarget "Woodhouse" */;
+			buildPhases = (
+				5F1CF3F6B8D0FD7B23432BE761D06159 /* Sources */,
+				3025F877DB5D2893693F553548285915 /* Frameworks */,
+				4AA69058BFB1DB1B65E8C2C3EF405F50 /* Resources */,
+				16366D29A95817344619229BA059BF2F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9F548F5C21FC6C775457423607853E0 /* PBXTargetDependency */,
+			);
+			name = Woodhouse;
+			productName = Woodhouse;
+			productReference = BC94475AFA875BACF89E96FB394D4854 /* Woodhouse.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA71BCAEA894DC67B39F26D3C2333A63 /* Pods-Woodhouse_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3CB7627371F5A79FF792EB759AFB5B0 /* Build configuration list for PBXNativeTarget "Pods-Woodhouse_Example" */;
+			buildPhases = (
+				FCF1E083900BADDAB7D5221B8A420F76 /* Sources */,
+				C039DC348A2305DDB514D11626EC6AEA /* Frameworks */,
+				116398ADA337B7B7ACB5B551BB735E76 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B6A7C72AF2892972E1166F0EE16E809 /* PBXTargetDependency */,
+			);
+			name = "Pods-Woodhouse_Example";
+			productName = "Pods-Woodhouse_Example";
+			productReference = B3D2FC310591A1C2C656AFEDE276BE01 /* Pods_Woodhouse_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F9B6199B881DCF3B9282611CCE8121F6 /* Pods-Woodhouse_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F00254D1ABFC314C640F41CC311779C /* Build configuration list for PBXNativeTarget "Pods-Woodhouse_Tests" */;
+			buildPhases = (
+				761C73C813DE964C48589C44EBEEF259 /* Sources */,
+				B98E0B55D7B0DA96764B563E0CFD2183 /* Frameworks */,
+				85AA0A7C8876FB621E808B343779F311 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8200D819356158179419927DE7C5FB5F /* PBXTargetDependency */,
+			);
+			name = "Pods-Woodhouse_Tests";
+			productName = "Pods-Woodhouse_Tests";
+			productReference = 37B4EF3E3E5A4DEBC61C819631BEAB6A /* Pods_Woodhouse_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA71BCAEA894DC67B39F26D3C2333A63 /* Pods-Woodhouse_Example */,
+				F9B6199B881DCF3B9282611CCE8121F6 /* Pods-Woodhouse_Tests */,
+				75237868B200EF0C27F0E8734C46A0A4 /* Woodhouse */,
+				0F6BFC24DAA7FBF43185BB7E1FA96A7A /* Woodhouse-Woodhouse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3337856E7BB1914085084FA63995618B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AA69058BFB1DB1B65E8C2C3EF405F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F54860D14DAF8C44416FBE0D976B90 /* Woodhouse.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C26D1667F0C46B5ADF43C9168B4C5A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F1CF3F6B8D0FD7B23432BE761D06159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C123C60E99E227536C5DFE13CA62DC18 /* ReplaceMe.swift in Sources */,
+				826E09934D44AA43A67565CF8F4E630E /* Woodhouse-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		761C73C813DE964C48589C44EBEEF259 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A993B6FC2F318ED44B601FFFC16E9F33 /* Pods-Woodhouse_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCF1E083900BADDAB7D5221B8A420F76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F835BB8170E27D18020FD24A7727E0D /* Pods-Woodhouse_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B6A7C72AF2892972E1166F0EE16E809 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Woodhouse;
+			target = 75237868B200EF0C27F0E8734C46A0A4 /* Woodhouse */;
+			targetProxy = 35EFD45EFA521EC95B8A60DAD5B2D088 /* PBXContainerItemProxy */;
+		};
+		8200D819356158179419927DE7C5FB5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Woodhouse;
+			target = 75237868B200EF0C27F0E8734C46A0A4 /* Woodhouse */;
+			targetProxy = CB5AEBD3C58A026BB20B28F7A2811631 /* PBXContainerItemProxy */;
+		};
+		E9F548F5C21FC6C775457423607853E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Woodhouse-Woodhouse";
+			target = 0F6BFC24DAA7FBF43185BB7E1FA96A7A /* Woodhouse-Woodhouse */;
+			targetProxy = 4F3944F2382D27F7EED277E2E228C4FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C99EB7B2CDFB520F1D164E1358EF273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0338EB6F8882F4D234FA3A8A18370BCA /* Pods-Woodhouse_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Woodhouse_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Woodhouse_Tests/Pods-Woodhouse_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Woodhouse_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3992A8700EE432399E5A32D2A9ED8467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F38ED4DC3311349C87051ED70F6561E /* Pods-Woodhouse_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Woodhouse_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Woodhouse_Tests/Pods-Woodhouse_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Woodhouse_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6EF059BB7BF97E3A0A331B4CFB7CC172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D2B840B845B7888DBAB21B78C9F870 /* Woodhouse-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Woodhouse/Woodhouse-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Woodhouse/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Woodhouse/Woodhouse.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Woodhouse;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		908A1172FCA3F2B022226C7D27BBD74B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D2B840B845B7888DBAB21B78C9F870 /* Woodhouse-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Woodhouse;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9945435B15B1F24CCE252772435D50FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71EEBF7282D6A8F8EC8BB7F8E20B8289 /* Pods-Woodhouse_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Woodhouse_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Woodhouse_Example/Pods-Woodhouse_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Woodhouse_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C748E76B8F4A4F241FDB40A35C3625D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A38C4E96C4B0FF02F731F43B185EFCE /* Pods-Woodhouse_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Woodhouse_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Woodhouse_Example/Pods-Woodhouse_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Woodhouse_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA5D8F7D5854809D08FE9BB601EB4AA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D2B840B845B7888DBAB21B78C9F870 /* Woodhouse-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Woodhouse;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FE6A8C559B12EE8C2424288970E9664A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D2B840B845B7888DBAB21B78C9F870 /* Woodhouse-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Woodhouse/Woodhouse-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Woodhouse/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Woodhouse/Woodhouse.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Woodhouse;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
+				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F00254D1ABFC314C640F41CC311779C /* Build configuration list for PBXNativeTarget "Pods-Woodhouse_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C99EB7B2CDFB520F1D164E1358EF273 /* Debug */,
+				3992A8700EE432399E5A32D2A9ED8467 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79A07CA1FFFC37085278B04CDDEFDF0C /* Build configuration list for PBXNativeTarget "Woodhouse-Woodhouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				908A1172FCA3F2B022226C7D27BBD74B /* Debug */,
+				DA5D8F7D5854809D08FE9BB601EB4AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3CB7627371F5A79FF792EB759AFB5B0 /* Build configuration list for PBXNativeTarget "Pods-Woodhouse_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C748E76B8F4A4F241FDB40A35C3625D1 /* Debug */,
+				9945435B15B1F24CCE252772435D50FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F78C587A6F9EF3DEE5051E3FF94A662D /* Build configuration list for PBXNativeTarget "Woodhouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE6A8C559B12EE8C2424288970E9664A /* Debug */,
+				6EF059BB7BF97E3A0A331B4CFB7CC172 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

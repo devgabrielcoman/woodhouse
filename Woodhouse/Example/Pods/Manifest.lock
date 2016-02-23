@@ -1,0 +1,14 @@
+PODS:
+  - Woodhouse (0.1.0)
+
+DEPENDENCIES:
+  - Woodhouse (from `../`)
+
+EXTERNAL SOURCES:
+  Woodhouse:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Woodhouse: a60790a0ac7c40a9aff7a57b28fcac28081befb2
+
+COCOAPODS: 0.38.2

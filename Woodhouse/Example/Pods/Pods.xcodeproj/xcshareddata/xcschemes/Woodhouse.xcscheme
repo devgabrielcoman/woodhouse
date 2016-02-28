@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0370C0ABB1F0E8EB1FF36924"
+               BlueprintIdentifier = "2DBC62C697E47C5AD2E78EAD"
                BuildableName = "Woodhouse.framework"
                BlueprintName = "Woodhouse"
                ReferencedContainer = "container:Pods.xcodeproj">

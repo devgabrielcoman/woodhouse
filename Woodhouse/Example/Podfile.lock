@@ -1,5 +1,14 @@
 PODS:
-  - Woodhouse (0.1.0)
+  - Alamofire (3.2.0)
+  - AlamofireObjectMapper (2.1.2):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - Dollar (5.0.0)
+  - ObjectMapper (1.1.5)
+  - Woodhouse (0.1.0):
+    - Alamofire (~> 3.0)
+    - AlamofireObjectMapper (~> 2.1)
+    - Dollar
 
 DEPENDENCIES:
   - Woodhouse (from `../`)
@@ -9,6 +18,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Woodhouse: a60790a0ac7c40a9aff7a57b28fcac28081befb2
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
+  Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
+  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  Woodhouse: f0b00416115e7740022c343b050fc7559a45ccf9
 
 COCOAPODS: 0.38.2

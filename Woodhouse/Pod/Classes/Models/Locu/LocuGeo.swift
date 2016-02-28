@@ -3,7 +3,7 @@
 //  Pods
 //
 //  Created by Gabriel Coman on 27/02/2016.
-//
+//  simple defintion of http://geojson.org/geojson-spec.html
 //
 
 import UIKit

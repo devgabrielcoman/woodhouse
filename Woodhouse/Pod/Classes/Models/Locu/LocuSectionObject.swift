@@ -3,7 +3,7 @@
 //  Pods
 //
 //  Created by Gabriel Coman on 28/02/2016.
-//
+//  as defined in https://dev.locu.com/documentation/#menu
 //
 
 import UIKit

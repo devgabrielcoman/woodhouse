@@ -14,8 +14,8 @@
 		075561CC3D33284B00D179CD85580224 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831C34526DC7A8DF837EE63AE930AC29 /* EnumTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		099115F36D674B6539D6BF350EDFBC9F /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 437EA77DCFD2F0423A9955D16E814E77 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		130B150706E208D426033ABCEF32CF5C /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B666497FD4501D7D8994C1D8664336F /* TransformType.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1B1098EC1C7D370500F1B914 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1098EA1C7D370500F1B914 /* Restaurant.swift */; };
-		1B1098ED1C7D370500F1B914 /* RestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1098EB1C7D370500F1B914 /* RestaurantInfo.swift */; };
+		1B1098EC1C7D370500F1B914 /* OMenuRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1098EA1C7D370500F1B914 /* OMenuRestaurant.swift */; };
+		1B1098ED1C7D370500F1B914 /* OMenuRestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1098EB1C7D370500F1B914 /* OMenuRestaurantInfo.swift */; };
 		1BA353321C8265D50097AFBA /* LocuRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353311C8265D50097AFBA /* LocuRestaurant.swift */; };
 		1BA353341C8265FA0097AFBA /* LocuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353331C8265FA0097AFBA /* LocuCategory.swift */; };
 		1BA353361C8266010097AFBA /* LocuLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353351C8266010097AFBA /* LocuLocation.swift */; };
@@ -36,6 +36,7 @@
 		1BA353541C834DF20097AFBA /* LocuSectionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353531C834DF20097AFBA /* LocuSectionObject.swift */; };
 		1BA353561C8350090097AFBA /* LocuOptionGroupObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353551C8350090097AFBA /* LocuOptionGroupObject.swift */; };
 		1BA353581C8350120097AFBA /* LocuOptionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353571C8350120097AFBA /* LocuOptionObject.swift */; };
+		1BA3535B1C8371440097AFBA /* Locu+OpenMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3535A1C8371440097AFBA /* Locu+OpenMenu.swift */; };
 		1DF2312ABC7C7634CF06106D1C31BA9F /* Woodhouse.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755E1C1FE4467F3978C5C1B444F2142B /* Woodhouse.bundle */; };
 		22268165D5DC4DB113429ECBA7BC3E75 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A47B1591B91333DD89401FF5BA9B4 /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		264461D713E9D9ED00F37F4024B3ACD4 /* AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5002148EAC50FCA308093FBD85BDD7B9 /* AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -225,8 +226,8 @@
 		13ABC37AD79B4D9431AA2D0FB629057C /* AlamofireObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		159A5481EAF00FE1FD2ABABB945371DD /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = ObjectMapper/Transforms/URLTransform.swift; sourceTree = "<group>"; };
 		17FE0649E1113763FFE488B2C491EC33 /* Woodhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Woodhouse.xcconfig; sourceTree = "<group>"; };
-		1B1098EA1C7D370500F1B914 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		1B1098EB1C7D370500F1B914 /* RestaurantInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantInfo.swift; sourceTree = "<group>"; };
+		1B1098EA1C7D370500F1B914 /* OMenuRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMenuRestaurant.swift; sourceTree = "<group>"; };
+		1B1098EB1C7D370500F1B914 /* OMenuRestaurantInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMenuRestaurantInfo.swift; sourceTree = "<group>"; };
 		1BA353311C8265D50097AFBA /* LocuRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuRestaurant.swift; sourceTree = "<group>"; };
 		1BA353331C8265FA0097AFBA /* LocuCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuCategory.swift; sourceTree = "<group>"; };
 		1BA353351C8266010097AFBA /* LocuLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuLocation.swift; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 		1BA353531C834DF20097AFBA /* LocuSectionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuSectionObject.swift; sourceTree = "<group>"; };
 		1BA353551C8350090097AFBA /* LocuOptionGroupObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuOptionGroupObject.swift; sourceTree = "<group>"; };
 		1BA353571C8350120097AFBA /* LocuOptionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuOptionObject.swift; sourceTree = "<group>"; };
+		1BA3535A1C8371440097AFBA /* Locu+OpenMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locu+OpenMenu.swift"; sourceTree = "<group>"; };
 		1C38AFD591ABB4ADC8DC63DBF3E7234A /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		1DE9C6F97F091E6B0752190610FD903C /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = ObjectMapper/Core/Operators.swift; sourceTree = "<group>"; };
 		1EC3DC63C7FB127FCBAE52C1AF2B796F /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -455,8 +457,8 @@
 		1B1098E91C7D370500F1B914 /* OpenMenu */ = {
 			isa = PBXGroup;
 			children = (
-				1B1098EA1C7D370500F1B914 /* Restaurant.swift */,
-				1B1098EB1C7D370500F1B914 /* RestaurantInfo.swift */,
+				1B1098EA1C7D370500F1B914 /* OMenuRestaurant.swift */,
+				1B1098EB1C7D370500F1B914 /* OMenuRestaurantInfo.swift */,
 			);
 			path = OpenMenu;
 			sourceTree = "<group>";
@@ -486,6 +488,14 @@
 				1BA353571C8350120097AFBA /* LocuOptionObject.swift */,
 			);
 			path = Locu;
+			sourceTree = "<group>";
+		};
+		1BA353591C8371290097AFBA /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				1BA3535A1C8371440097AFBA /* Locu+OpenMenu.swift */,
+			);
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 		20D202E60091FDFD6F4E74F0CA1BCF87 /* iOS */ = {
@@ -618,6 +628,7 @@
 		A34D2507C73225D4CF6D42FBE222682F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1BA353591C8371290097AFBA /* Transformers */,
 				1B1098E21C7D27C000F1B914 /* Models */,
 				51D58FD6ED88BB4B402C479F167885C4 /* Services */,
 			);
@@ -1067,7 +1078,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA3534C1C826E7C0097AFBA /* LocuPriceRange.swift in Sources */,
-				1B1098EC1C7D370500F1B914 /* Restaurant.swift in Sources */,
+				1B1098EC1C7D370500F1B914 /* OMenuRestaurant.swift in Sources */,
 				1BA353401C8266670097AFBA /* LocuExternalIDs.swift in Sources */,
 				1BA3534A1C826E740097AFBA /* LocuCurrency.swift in Sources */,
 				BAE2C2698C5454528CEFC36401F2902E /* LocuService.swift in Sources */,
@@ -1083,7 +1094,8 @@
 				1BA353581C8350120097AFBA /* LocuOptionObject.swift in Sources */,
 				1BA353461C826B860097AFBA /* LocuPaymentMethods.swift in Sources */,
 				9E06BA70E6F763F2A4BDB9ED84601B84 /* ServiceProtocol.swift in Sources */,
-				1B1098ED1C7D370500F1B914 /* RestaurantInfo.swift in Sources */,
+				1BA3535B1C8371440097AFBA /* Locu+OpenMenu.swift in Sources */,
+				1B1098ED1C7D370500F1B914 /* OMenuRestaurantInfo.swift in Sources */,
 				D4F9AA7B06C1992F27F933BBE2EF5F2C /* Woodhouse-dummy.m in Sources */,
 				1BA353541C834DF20097AFBA /* LocuSectionObject.swift in Sources */,
 				1BA3533A1C82661B0097AFBA /* LocuDelivery.swift in Sources */,

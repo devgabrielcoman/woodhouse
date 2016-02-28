@@ -30,6 +30,12 @@
 		1BA353481C826BC30097AFBA /* LocuHourInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353471C826BC30097AFBA /* LocuHourInterval.swift */; };
 		1BA3534A1C826E740097AFBA /* LocuCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353491C826E740097AFBA /* LocuCurrency.swift */; };
 		1BA3534C1C826E7C0097AFBA /* LocuPriceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3534B1C826E7C0097AFBA /* LocuPriceRange.swift */; };
+		1BA3534E1C8348420097AFBA /* LocuMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3534D1C8348420097AFBA /* LocuMenu.swift */; };
+		1BA353501C83486F0097AFBA /* LocuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3534F1C83486F0097AFBA /* LocuSection.swift */; };
+		1BA353521C8348770097AFBA /* LocuSubsection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353511C8348770097AFBA /* LocuSubsection.swift */; };
+		1BA353541C834DF20097AFBA /* LocuSectionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353531C834DF20097AFBA /* LocuSectionObject.swift */; };
+		1BA353561C8350090097AFBA /* LocuOptionGroupObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353551C8350090097AFBA /* LocuOptionGroupObject.swift */; };
+		1BA353581C8350120097AFBA /* LocuOptionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA353571C8350120097AFBA /* LocuOptionObject.swift */; };
 		1DF2312ABC7C7634CF06106D1C31BA9F /* Woodhouse.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755E1C1FE4467F3978C5C1B444F2142B /* Woodhouse.bundle */; };
 		22268165D5DC4DB113429ECBA7BC3E75 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A47B1591B91333DD89401FF5BA9B4 /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		264461D713E9D9ED00F37F4024B3ACD4 /* AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5002148EAC50FCA308093FBD85BDD7B9 /* AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -235,6 +241,12 @@
 		1BA353471C826BC30097AFBA /* LocuHourInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuHourInterval.swift; sourceTree = "<group>"; };
 		1BA353491C826E740097AFBA /* LocuCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuCurrency.swift; sourceTree = "<group>"; };
 		1BA3534B1C826E7C0097AFBA /* LocuPriceRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuPriceRange.swift; sourceTree = "<group>"; };
+		1BA3534D1C8348420097AFBA /* LocuMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuMenu.swift; sourceTree = "<group>"; };
+		1BA3534F1C83486F0097AFBA /* LocuSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuSection.swift; sourceTree = "<group>"; };
+		1BA353511C8348770097AFBA /* LocuSubsection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuSubsection.swift; sourceTree = "<group>"; };
+		1BA353531C834DF20097AFBA /* LocuSectionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuSectionObject.swift; sourceTree = "<group>"; };
+		1BA353551C8350090097AFBA /* LocuOptionGroupObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuOptionGroupObject.swift; sourceTree = "<group>"; };
+		1BA353571C8350120097AFBA /* LocuOptionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocuOptionObject.swift; sourceTree = "<group>"; };
 		1C38AFD591ABB4ADC8DC63DBF3E7234A /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		1DE9C6F97F091E6B0752190610FD903C /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = ObjectMapper/Core/Operators.swift; sourceTree = "<group>"; };
 		1EC3DC63C7FB127FCBAE52C1AF2B796F /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -455,17 +467,23 @@
 				1BA353311C8265D50097AFBA /* LocuRestaurant.swift */,
 				1BA353331C8265FA0097AFBA /* LocuCategory.swift */,
 				1BA353351C8266010097AFBA /* LocuLocation.swift */,
+				1BA353431C82697B0097AFBA /* LocuGeo.swift */,
+				1BA353411C8267500097AFBA /* LocuOpenHours.swift */,
+				1BA353471C826BC30097AFBA /* LocuHourInterval.swift */,
 				1BA353371C82660B0097AFBA /* LocuContact.swift */,
 				1BA353391C82661B0097AFBA /* LocuDelivery.swift */,
 				1BA3533B1C8266280097AFBA /* LocuExtended.swift */,
-				1BA3533D1C82662F0097AFBA /* LocuMedia.swift */,
-				1BA3533F1C8266670097AFBA /* LocuExternalIDs.swift */,
-				1BA353411C8267500097AFBA /* LocuOpenHours.swift */,
-				1BA353471C826BC30097AFBA /* LocuHourInterval.swift */,
-				1BA353431C82697B0097AFBA /* LocuGeo.swift */,
 				1BA353451C826B860097AFBA /* LocuPaymentMethods.swift */,
 				1BA353491C826E740097AFBA /* LocuCurrency.swift */,
 				1BA3534B1C826E7C0097AFBA /* LocuPriceRange.swift */,
+				1BA3533D1C82662F0097AFBA /* LocuMedia.swift */,
+				1BA3533F1C8266670097AFBA /* LocuExternalIDs.swift */,
+				1BA3534D1C8348420097AFBA /* LocuMenu.swift */,
+				1BA3534F1C83486F0097AFBA /* LocuSection.swift */,
+				1BA353511C8348770097AFBA /* LocuSubsection.swift */,
+				1BA353531C834DF20097AFBA /* LocuSectionObject.swift */,
+				1BA353551C8350090097AFBA /* LocuOptionGroupObject.swift */,
+				1BA353571C8350120097AFBA /* LocuOptionObject.swift */,
 			);
 			path = Locu;
 			sourceTree = "<group>";
@@ -1054,14 +1072,20 @@
 				1BA3534A1C826E740097AFBA /* LocuCurrency.swift in Sources */,
 				BAE2C2698C5454528CEFC36401F2902E /* LocuService.swift in Sources */,
 				1BA353441C82697B0097AFBA /* LocuGeo.swift in Sources */,
+				1BA353501C83486F0097AFBA /* LocuSection.swift in Sources */,
+				1BA353521C8348770097AFBA /* LocuSubsection.swift in Sources */,
 				1BA353421C8267500097AFBA /* LocuOpenHours.swift in Sources */,
 				1BA353361C8266010097AFBA /* LocuLocation.swift in Sources */,
 				1BA353321C8265D50097AFBA /* LocuRestaurant.swift in Sources */,
+				1BA3534E1C8348420097AFBA /* LocuMenu.swift in Sources */,
 				1BA353481C826BC30097AFBA /* LocuHourInterval.swift in Sources */,
+				1BA353561C8350090097AFBA /* LocuOptionGroupObject.swift in Sources */,
+				1BA353581C8350120097AFBA /* LocuOptionObject.swift in Sources */,
 				1BA353461C826B860097AFBA /* LocuPaymentMethods.swift in Sources */,
 				9E06BA70E6F763F2A4BDB9ED84601B84 /* ServiceProtocol.swift in Sources */,
 				1B1098ED1C7D370500F1B914 /* RestaurantInfo.swift in Sources */,
 				D4F9AA7B06C1992F27F933BBE2EF5F2C /* Woodhouse-dummy.m in Sources */,
+				1BA353541C834DF20097AFBA /* LocuSectionObject.swift in Sources */,
 				1BA3533A1C82661B0097AFBA /* LocuDelivery.swift in Sources */,
 				1BA3533E1C82662F0097AFBA /* LocuMedia.swift in Sources */,
 				1BA3533C1C8266280097AFBA /* LocuExtended.swift in Sources */,

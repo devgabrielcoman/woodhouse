@@ -12,13 +12,13 @@ import Dollar
 
 class LocuHours: NSObject, Mappable {
     // private variables to  map to the JSON
-    private var imonday: [[String]]?
-    private var ituesday: [[String]]?
-    private var iwednesday: [[String]]?
-    private var ithursday: [[String]]?
-    private var ifriday: [[String]]?
-    private var isaturday: [[String]]?
-    private var isunday: [[String]]?
+    private var imonday: [[String]] = [[]]
+    private var ituesday: [[String]] = [[]]
+    private var iwednesday: [[String]] = [[]]
+    private var ithursday: [[String]] = [[]]
+    private var ifriday: [[String]] = [[]]
+    private var isaturday: [[String]] = [[]]
+    private var isunday: [[String]] = [[]]
     // public vars that are better to access for 3rd parties
     var monday: [LocuHourInterval] = []
     var tuesday: [LocuHourInterval] = []
@@ -43,61 +43,47 @@ class LocuHours: NSObject, Mappable {
         isunday <- map["sunday"]
         
         // now do some more parsings
-        if let imo = imonday {
-            $.each(imo) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.monday.append(i)
-                }
+        $.each(imonday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.monday.append(interval)
             }
         }
         
-        if let itu = ituesday {
-            $.each(itu) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.tuesday.append(i)
-                }
+        $.each(ituesday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.tuesday.append(interval)
             }
         }
-        if let itu = iwednesday {
-            $.each(itu) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.wednesday.append(i)
-                }
+        $.each(iwednesday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.wednesday.append(interval)
             }
         }
-        if let itu = ithursday {
-            $.each(itu) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.thursday.append(i)
-                }
+        $.each(ithursday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.thursday.append(interval)
             }
         }
-        if let itu = ifriday {
-            $.each(itu) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.friday.append(i)
-                }
+        $.each(ifriday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.friday.append(interval)
             }
         }
-        if let itu = isaturday {
-            $.each(itu) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.saturday.append(i)
-                }
+        $.each(isaturday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.saturday.append(interval)
             }
         }
-        if let itu = isunday {
-            $.each(itu) { (index, hourinterval) in
-                let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
-                if let i = interval {
-                    self.sunday.append(i)
-                }
+        $.each(isunday) { (index, hourinterval) in
+            let interval: LocuHourInterval? = self.mapInternalToExternal(hourinterval)
+            if let interval = interval {
+                self.sunday.append(interval)
             }
         }
     }
@@ -107,10 +93,12 @@ class LocuHours: NSObject, Mappable {
     // array (e.g. ["12:00","19:30"] to a more manageable LocuHourInterval object
     // that contains start and end string dates
     private func mapInternalToExternal(interval: [String]) -> LocuHourInterval? {
-        let start = (interval as [String]).first as String?
-        let end = (interval as [String])[1] as String?
-        if let s = start, e = end {
-            return LocuHourInterval(start: s, end: e)
+        if interval.count >= 2 {
+            let start = interval[0] as String?
+            let end = interval[1] as String?
+            if let start = start, end = end {
+                return LocuHourInterval(start: start, end: end)
+            }
         }
         return nil
     }
@@ -118,37 +106,37 @@ class LocuHours: NSObject, Mappable {
     func printModel() {
         print("openHours: ")
         
-        var monOut = "\tmonday: "
+        var monOut = "\t|-- monday: "
         $.each(monday) { (index, interval) in
             monOut += "\((interval as LocuHourInterval).printModel()) "
         }
         
-        var tueOut = "\ttuesday: "
+        var tueOut = "\t|-- tuesday: "
         $.each(tuesday) { (index, interval) in
             tueOut += "\((interval as LocuHourInterval).printModel()) "
         }
         
-        var wedOut = "\twednesday: "
+        var wedOut = "\t|-- wednesday: "
         $.each(wednesday) { (index, interval) in
             wedOut += "\((interval as LocuHourInterval).printModel()) "
         }
         
-        var thuOut = "\tthursday: "
+        var thuOut = "\t|-- thursday: "
         $.each(thursday) { (index, interval) in
             thuOut += "\((interval as LocuHourInterval).printModel()) "
         }
         
-        var friOut = "\tfriday: "
+        var friOut = "\t|-- friday: "
         $.each(friday) { (index, interval) in
             friOut += "\((interval as LocuHourInterval).printModel()) "
         }
         
-        var satOut = "\tsaturday: "
+        var satOut = "\t|-- saturday: "
         $.each(saturday) { (index, interval) in
             satOut += "\((interval as LocuHourInterval).printModel()) "
         }
         
-        var sunOut = "\tsunday: "
+        var sunOut = "\t|-- sunday: "
         $.each(sunday) { (index, interval) in
             sunOut += "\((interval as LocuHourInterval).printModel()) "
         }

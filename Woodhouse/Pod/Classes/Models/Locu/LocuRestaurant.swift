@@ -11,25 +11,30 @@ import ObjectMapper
 import Dollar
 
 class LocuRestaurant: NSObject, Mappable {
-    var locuId: String?
-    var name: String?
-    var shortName: String?
-    var restaurantDescription: String?
-    var websiteURL: String?
-    var menuURL: String?
-    var redirectedFrom: String?
-    var openHours: LocuHours?
-    var external: LocuExternalIDs?
-    var categories: [LocuCategory]?
+    var locuId: String!
+    var name: String!
+    var shortName: String!
+    var restaurantDescription: String!
+    var websiteURL: String!
+    var menuURL: String!
+    var redirectedFrom: String!
+    
+    var categories: [LocuCategory] = []    // init array as empty, but valid
     var location: LocuLocation?
     var contact: LocuContact?
+    var openHours: LocuHours?
     var delivery: LocuDelivery?
+    var external: LocuExternalIDs?
     var extended: LocuExtended?
     var media: LocuMedia?
-    var menus: [LocuMenu]?
+    var menus: [LocuMenu] = []
     
     required init?(_ map: Map) {
         
+    }
+    
+    override init() {
+        super.init()
     }
     
     func mapping(map: Map) {
@@ -50,40 +55,26 @@ class LocuRestaurant: NSObject, Mappable {
     }
     
     func printModel() {
-        print("locuId: \(locuId)")
-        print("name: \(name)")
-        print("shortName: \(shortName)")
-        print("description: \(restaurantDescription)")
-        print("websiteURL: \(websiteURL)")
-        print("menuURL: \(menuURL)")
-        print("redirectedFrom: \(redirectedFrom)")
-        if let cat = categories {
-            print("categories [\(cat.count)]")
-            $.each(cat) { (index, category) in
-                (category as LocuCategory).printModel()
-            }
+        print("general: ")
+        print("\t|-- locuId: \(locuId)")
+        print("\t|-- name: \(name)")
+        print("\t|-- shortName: \(shortName)")
+        print("\t|-- description: \(restaurantDescription)")
+        print("\t|-- websiteURL: \(websiteURL)")
+        print("\t|-- menuURL: \(menuURL)")
+        print("\t|-- redirectedFrom: \(redirectedFrom)")
+        
+        $.each(categories) { (index, category: LocuCategory) in
+            category.printModel()
         }
-        if let loc = location {
-            loc.printModel()
+        location?.printModel()
+        contact?.printModel()
+        openHours?.printModel()
+        delivery?.printModel()
+        extended?.printModel()
+        $.each(menus) { (index, menu: LocuMenu) in
+            menu.printModel()
         }
-        if let oh = openHours {
-            oh.printModel()
-        }
-        if let co = contact {
-            co.printModel()
-        }
-        if let del = delivery {
-            del.printModel()
-        }
-        if let ext = extended {
-            ext.printModel()
-        }
-        if let m = menus {
-            print("menus [\(m.count)]")
-            $.each(m) { (index, menu) in
-                (menu as LocuMenu).printModel()
-            }
-        }
-        print("------------------")
+        print("####################")
     }
 }

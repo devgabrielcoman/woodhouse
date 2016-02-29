@@ -9,8 +9,8 @@
 import UIKit
 
 class LocuHourInterval: NSObject {
-    var start: String?
-    var end: String?
+    var start: String!
+    var end: String!
     
     init(start _s: String, end _e: String) {
         super.init()
@@ -19,8 +19,8 @@ class LocuHourInterval: NSObject {
     }
     
     func printModel() -> String {
-        if let s = start, e = end {
-            return ("\(s) - \(e)")
+        if let start = start, end = end {
+            return ("\(start) - \(end)")
         }
         return ""
     }

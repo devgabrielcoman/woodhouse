@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class LocuDelivery: NSObject, Mappable {
-    var willDeliver: Bool?
-    var minimumOrder: Float?
+    var willDeliver: Bool!
+    var minimumOrder: Float!
     var hours: LocuHours?
     
     required init?(_ map: Map) {
@@ -28,8 +28,6 @@ class LocuDelivery: NSObject, Mappable {
         print("delivery")
         print("\twillDeliver: \(willDeliver)")
         print("\tminimumOrder: \(minimumOrder)")
-        if let h = hours {
-            h.printModel()
-        }
+        hours?.printModel()
     }
 }

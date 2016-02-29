@@ -10,9 +10,9 @@ import UIKit
 import ObjectMapper
 
 class LocuGeo: NSObject, Mappable {
-    var type: String?
-    var longitude: Float?
-    var latitude: Float?
+    var type: String!
+    var longitude: Float!
+    var latitude: Float!
     
     required init?(_ map: Map) {
         
@@ -25,8 +25,12 @@ class LocuGeo: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\ttype: \(type)")
-        print("\tlatitude: \(latitude)")
-        print("\tlongitude: \(longitude)")
+        print("\t|-- geo: ")
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                print("\t\t|-- \(property_name) = \(attr.value)")
+            }
+        }
     }
 }

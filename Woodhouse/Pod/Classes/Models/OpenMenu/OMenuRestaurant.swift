@@ -11,11 +11,11 @@ import UIKit
 import ObjectMapper
 
 class OMenuRestaurant: NSObject, Mappable {
-    var uuid: String?
-    var accuracy: String?
-    var privacy: Bool?
-    var version: String?
-    var updatedTimestamp: Int32?
+    var uuid: String!
+    var accuracy: String!
+    var privacy: Bool!
+    var version: String!
+    var updatedTimestamp: Int32!
     var restaurantInfo: OMenuRestaurantInfo?
     
     required init?(_ map: Map){
@@ -32,5 +32,19 @@ class OMenuRestaurant: NSObject, Mappable {
         privacy <- map["omf_private"]
         version <- map["omf_version"]
         updatedTimestamp <- map["omf_updated_timestamp"]
+    }
+    
+    func printModel() {
+        print("omenu info:")
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                if property_name == "restaurantInfo" {
+                    restaurantInfo?.printModel()
+                } else {
+                    print("\t|-- \(property_name) = \(attr.value)")
+                }
+            }
+        }
     }
 }

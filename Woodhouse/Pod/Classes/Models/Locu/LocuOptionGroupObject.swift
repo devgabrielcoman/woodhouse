@@ -11,9 +11,9 @@ import ObjectMapper
 import Dollar
 
 class LocuOptionGroupObject: NSObject, Mappable {
-    var type: String?
-    var text: String?
-    var options: [LocuOptionObject]?
+    var type: String!
+    var text: String!
+    var options: [LocuOptionObject] = []
     
     required init?(_ map: Map) {
         
@@ -26,17 +26,11 @@ class LocuOptionGroupObject: NSObject, Mappable {
     }
     
     func printModel() {
-        if let t = type {
-            print("\t\t\t\t\ttype: \(t)")
-        }
-        if let t = text {
-            print("\t\t\t\t\ttext: \(t)")
-        }
-        if let o = options {
-            print("\t\t\t\t\toptions [\(o.count)]")
-            $.each(o) { (index, option) in
-                (option as LocuOptionObject).printModel()
-            }
+        print("\t\t\t\t|-- option group:")
+        print("\t\t\t\t\t|-- type: \(type)")
+        print("\t\t\t\t\t|-- text: \(text)")
+        $.each(options) { (index, option: LocuOptionObject) in
+            option.printModel()
         }
     }
 }

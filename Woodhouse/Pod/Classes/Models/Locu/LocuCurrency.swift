@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class LocuCurrency: NSObject, Mappable {
-    var symbol: String?
-    var name: String?
+    var symbol: String!
+    var name: String!
     
     required init?(_ map: Map) {
         
@@ -23,6 +23,6 @@ class LocuCurrency: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\tcurrency \(symbol) \(name)")
+        print("\t|-- currency \(symbol) \(name)")
     }
 }

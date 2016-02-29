@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class LocuOptionObject: NSObject, Mappable {
-    var name: String?
-    var price: String?
+    var name: String!
+    var price: String!
     
     required init?(_ map: Map) {
         
@@ -23,11 +23,8 @@ class LocuOptionObject: NSObject, Mappable {
     }
     
     func printModel() {
-        if let n = name {
-            print("\t\t\t\t\t\tname: \(n)")
-        }
-        if let p = price {
-            print("\t\t\t\t\t\tprice: \(p)")
-        }
+        print("\t\t\t\t\t|-- option object: ")
+        print("\t\t\t\t\t\t|-- name: \(name)")
+        print("\t\t\t\t\t\t|-- price: \(price)")
     }
 }

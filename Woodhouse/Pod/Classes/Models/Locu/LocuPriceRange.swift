@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class LocuPriceRange: NSObject, Mappable {
-    var low: String?
-    var high: String?
+    var low: String!
+    var high: String!
     
     required init?(_ map: Map) {
         
@@ -23,6 +23,6 @@ class LocuPriceRange: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\tpriceRange: \(low) - \(high)")
+        print("\t|-- priceRange: \(low) - \(high)")
     }
 }

@@ -10,13 +10,13 @@ import UIKit
 import ObjectMapper
 
 class LocuLocation: NSObject, Mappable {
-    var address1: String?
-    var address2: String?
-    var address3: String?
-    var locality: String?
-    var region: String?
-    var postalCode: String?
-    var country: String?
+    var address1: String!
+    var address2: String!
+    var address3: String!
+    var locality: String!
+    var region: String!
+    var postalCode: String!
+    var country: String!
     var geo: LocuGeo?
     
     required init?(_ map: Map) {
@@ -36,15 +36,15 @@ class LocuLocation: NSObject, Mappable {
     
     func printModel() {
         print("location: ")
-        print("\taddress1: \(address1)")
-        print("\taddress2: \(address2)")
-        print("\taddress3: \(address3)")
-        print("\tlocality: \(locality)")
-        print("\tregion: \(region)")
-        print("\tpostalCode: \(postalCode)")
-        print("\tcountry: \(country)")
-        if let g = geo {
-            g.printModel()
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                if property_name != "geo" {
+                    print("\t|-- \(property_name) = \(attr.value)")
+                } else {
+                    geo?.printModel()
+                }
+            }
         }
     }
 }

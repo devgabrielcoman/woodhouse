@@ -52,8 +52,10 @@ public class LocuService: NSObject, ServiceProtocol {
         // and make the request
         Alamofire.request(.POST, Url, parameters: parameters, encoding: .JSON).responseArray("venues") { (response: Response<[LocuRestaurant], NSError>) -> Void in
             if let locu = response.result.value {
-                $.each(locu) { (index, elem) in
-                    (elem as LocuRestaurant).printModel()
+                $.each(locu) { (index, elem: LocuRestaurant) in
+                    elem.printModel()
+                    let omf: OMenuRestaurant = elem.convertToOpenMenu()
+                    omf.printModel()
                 }
             }
         }

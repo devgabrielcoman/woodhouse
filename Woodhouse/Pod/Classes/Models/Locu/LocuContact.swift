@@ -10,10 +10,10 @@ import UIKit
 import ObjectMapper
 
 class LocuContact: NSObject, Mappable {
-    var phone: String?
-    var fax: String?
-    var email: String?
-    var businessOwner: String?
+    var phone: String!
+    var fax: String!
+    var email: String!
+    var businessOwner: String!
     
     required init?(_ map: Map) {
         
@@ -27,10 +27,12 @@ class LocuContact: NSObject, Mappable {
     }
     
     func printModel() {
-        print("contact")
-        print("\tphone: \(phone)")
-        print("\tfax: \(fax)")
-        print("\temail: \(email)")
-        print("\tbusinessOwner: \(businessOwner)")
+        print("contact:")
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                print("\t|-- \(property_name) = \(attr.value)")
+            }
+        }
     }
 }

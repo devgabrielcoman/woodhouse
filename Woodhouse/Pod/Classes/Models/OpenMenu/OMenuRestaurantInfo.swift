@@ -10,25 +10,25 @@ import UIKit
 import ObjectMapper
 
 class OMenuRestaurantInfo: NSObject, Mappable {
-    var restaurantName: String?
-    var briefDescription: String?
-    var fullDescription: String?
-    var locationId: Int32?
-    var mobile: Bool?
-    var address1: String?
-    var address2: String?
-    var cityTown: String?
-    var stateProvince: String?
-    var postalCode: String?
-    var country: String?
-    var phone: String?
-    var fax:String?
-    var longitude:Double?
-    var latitude:Double?
-    var businessType:String?
-    var utcOffset:String?
-    var websiteUrl:String?
-    var fileUrl:String?
+    var restaurantName: String!
+    var briefDescription: String!
+    var fullDescription: String!
+    var locationId: Int32!
+    var mobile: Bool!
+    var address1: String!
+    var address2: String!
+    var cityTown: String!
+    var stateProvince: String!
+    var postalCode: String!
+    var country: String!
+    var phone: String!
+    var fax:String!
+    var longitude:Float!
+    var latitude:Float!
+    var businessType:String!
+    var utcOffset:String!
+    var websiteUrl:String!
+    var fileUrl:String!
     
     required init?(_ map: Map){
         
@@ -58,5 +58,15 @@ class OMenuRestaurantInfo: NSObject, Mappable {
         utcOffset <- map["utc_offset"]
         websiteUrl <- map["website_url"]
         fileUrl <- map["omf_file_url"]
+    }
+    
+    func printModel () {
+        print("restaurant info: ")
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                print("\t|-- \(property_name) = \(attr.value)")
+            }
+        }
     }
 }

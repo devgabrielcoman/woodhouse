@@ -11,12 +11,12 @@ import ObjectMapper
 import Dollar
 
 class LocuSectionObject: NSObject, Mappable {
-    var type: String?
-    var text: String?
-    var name: String?
-    var objectDescription: String?
-    var price: String?
-    var optionGroups: [LocuOptionGroupObject]?
+    var type: String!
+    var text: String!
+    var name: String!
+    var objectDescription: String!
+    var price: String!
+    var optionGroups: [LocuOptionGroupObject] = []
     
     required init?(_ map: Map) {
         
@@ -32,27 +32,14 @@ class LocuSectionObject: NSObject, Mappable {
     }
     
     func printModel() {
-        if let t = type {
-            print("\t\t\t\ttype: \(t)")
+        print("\t\t\t|-- object: ")
+        print("\t\t\t\t|-- type: \(type)")
+        print("\t\t\t\t|-- text: \(text)")
+        print("\t\t\t\t|-- name: \(name)")
+        print("\t\t\t\t|-- description: \(objectDescription)")
+        print("\t\t\t\t|-- price: \(price)")
+        $.each(optionGroups) { (index, option: LocuOptionGroupObject) in
+            option.printModel()
         }
-        if let te = text {
-            print("\t\t\t\ttext: \(te)")
-        }
-        if let n = name {
-            print("\t\t\t\tname: \(n)")
-        }
-        if let descr = objectDescription {
-            print("\t\t\t\tdescription: \(descr)")
-        }
-        if let pr = price {
-            print("\t\t\t\tprice: \(pr)")
-        }
-        if let opt = optionGroups {
-            print("\t\t\t\toptions [\(opt.count)]")
-            $.each(opt) { (index, option) in
-                (option as LocuOptionGroupObject).printModel()
-            }
-        }
-        print("\t\t\t\t---")
     }
 }

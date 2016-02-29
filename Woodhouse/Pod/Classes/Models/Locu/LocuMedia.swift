@@ -9,9 +9,5 @@
 import UIKit
 
 class LocuMedia: NSObject {
-    var coverPhoto: String?
-    var venuePhotos: [String]?
-    var menuPhotos: [String]?
-    var logos: [String]?
-    var videos: [String]?
+    // not implemented
 }

@@ -10,8 +10,8 @@ import UIKit
 import ObjectMapper
 
 class LocuCategory: NSObject, Mappable {
-    var strId: String?
-    var name: String?
+    var strId: String!
+    var name: String!
     
     required init?(_ map: Map) {
         
@@ -23,6 +23,12 @@ class LocuCategory: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t\(strId) - \(name)")
+        print("category:")
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                print("\t|-- \(property_name) = \(attr.value)")
+            }
+        }
     }
 }

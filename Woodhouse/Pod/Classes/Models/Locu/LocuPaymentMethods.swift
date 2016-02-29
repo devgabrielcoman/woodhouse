@@ -10,18 +10,18 @@ import UIKit
 import ObjectMapper
 
 class LocuPaymentMethods: NSObject, Mappable {
-    var visa: Bool?
-    var mastercard: Bool?
-    var amex: Bool?
-    var discover: Bool?
-    var dinersclub: Bool?
-    var square: Bool?
-    var paypal: Bool?
-    var giftcard: Bool?
-    var jcb: Bool?
-    var check: Bool?
-    var carteblanche: Bool?
-    var cash: Bool?
+    var visa: Bool!
+    var mastercard: Bool!
+    var amex: Bool!
+    var discover: Bool!
+    var dinersclub: Bool!
+    var square: Bool!
+    var paypal: Bool!
+    var giftcard: Bool!
+    var jcb: Bool!
+    var check: Bool!
+    var carteblanche: Bool!
+    var cash: Bool!
     
     required init?(_ map: Map) {
         
@@ -43,43 +43,12 @@ class LocuPaymentMethods: NSObject, Mappable {
     }
     
     func printModel() {
-        var payStr = "\tpayment: "
-        if let item = visa {
-            payStr += (item == true ? "visa ": "")
+        print("\t|-- payment: ")
+        let mirrored = Mirror(reflecting: self)
+        for (_, attr) in mirrored.children.enumerate() {
+            if let property_name = attr.label as String! {
+                print("\t\t|-- \(property_name) = \(attr.value)")
+            }
         }
-        if let item = mastercard {
-            payStr += (item == true ? "mastercard ": "")
-        }
-        if let item = amex {
-            payStr += (item == true ? "amex ": "")
-        }
-        if let item = discover {
-            payStr += (item == true ? "discover ": "")
-        }
-        if let item = dinersclub {
-            payStr += (item == true ? "dinersclub ": "")
-        }
-        if let item = square {
-            payStr += (item == true ? "square ": "")
-        }
-        if let item = paypal {
-            payStr += (item == true ? "paypal ": "")
-        }
-        if let item = giftcard {
-            payStr += (item == true ? "giftcard ": "")
-        }
-        if let item = jcb {
-            payStr += (item == true ? "jcb ": "")
-        }
-        if let item = check {
-            payStr += (item == true ? "check ": "")
-        }
-        if let item = carteblanche {
-            payStr += (item == true ? "carteblanche ": "")
-        }
-        if let item = cash {
-            payStr += (item == true ? "cash ": "")
-        }
-        print(payStr)
     }
 }

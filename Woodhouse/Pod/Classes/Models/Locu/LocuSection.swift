@@ -11,8 +11,8 @@ import ObjectMapper
 import Dollar
 
 class LocuSection: NSObject, Mappable {
-    var sectionName: String?
-    var subsections: [LocuSubsection]?
+    var sectionName: String!
+    var subsections: [LocuSubsection] = []
     
     required init?(_ map: Map) {
         
@@ -24,14 +24,10 @@ class LocuSection: NSObject, Mappable {
     }
     
     func printModel() {
-        if let sn = sectionName {
-            print("\t\tsectionName: \(sn)")
-        }
-        if let ss = subsections {
-            print("\t\tsubsections [\(ss.count)]")
-            $.each(ss) { (index, subsection) in
-                (subsection as LocuSubsection).printModel()
-            }
+        print("\t|-- section: ")
+        print("\t\t|-- sectionName: \(sectionName)")
+        $.each(subsections) { (index, subsection: LocuSubsection) in
+            subsection.printModel()
         }
     }
 }

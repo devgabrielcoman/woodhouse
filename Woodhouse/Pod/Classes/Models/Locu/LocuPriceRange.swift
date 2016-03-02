@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuPriceRange: NSObject, Mappable {
     var low: String!
@@ -23,6 +24,6 @@ class LocuPriceRange: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t|-- priceRange: \(low) - \(high)")
+        Nosce.printObject(reflecting: self, alias: "Price Rage:", tab: 1)
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuCategory: NSObject, Mappable {
     var strId: String!
@@ -23,12 +24,6 @@ class LocuCategory: NSObject, Mappable {
     }
     
     func printModel() {
-        print("category:")
-        let mirrored = Mirror(reflecting: self)
-        for (_, attr) in mirrored.children.enumerate() {
-            if let property_name = attr.label as String! {
-                print("\t|-- \(property_name) = \(attr.value)")
-            }
-        }
+        Nosce.printObject(reflecting: self, alias: "Category:", tab: 0)
     }
 }

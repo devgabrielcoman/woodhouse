@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import ObjectMapper;
+import ObjectMapper
+import Nosce
 
 class LocuExtended: NSObject, Mappable {
     var establishedDate: String!
@@ -92,20 +93,9 @@ class LocuExtended: NSObject, Mappable {
     }
     
     func printModel() {
-        print("extended: ")
-        let mirrored = Mirror(reflecting: self)
-        for (_, attr) in mirrored.children.enumerate() {
-            if let property_name = attr.label as String! {
-                if property_name == "priceRange" {
-                    priceRange?.printModel()
-                } else if property_name == "currency" {
-                    currency?.printModel()
-                } else if property_name == "paymentMethods" {
-                    paymentMethods?.printModel()
-                } else {
-                    print("\t|-- \(property_name) = \(attr.value)")
-                }
-            }
-        }
+        Nosce.printObject(reflecting: self, alias: "Extended", tab: 0, exceptFields: ["priceRange","currency","paymentMethods"])
+        priceRange?.printModel()
+        currency?.printModel()
+        paymentMethods?.printModel()
     }
 }

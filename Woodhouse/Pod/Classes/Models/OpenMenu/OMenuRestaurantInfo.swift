@@ -7,7 +7,9 @@
 //
 
 import UIKit
+
 import ObjectMapper
+import Nosce
 
 class OMenuRestaurantInfo: NSObject, Mappable {
     var restaurantName: String!
@@ -61,12 +63,6 @@ class OMenuRestaurantInfo: NSObject, Mappable {
     }
     
     func printModel () {
-        print("restaurant info: ")
-        let mirrored = Mirror(reflecting: self)
-        for (_, attr) in mirrored.children.enumerate() {
-            if let property_name = attr.label as String! {
-                print("\t|-- \(property_name) = \(attr.value)")
-            }
-        }
+        Nosce.printObject(reflecting: self, alias: "OMenu Restaurant Info")
     }
 }

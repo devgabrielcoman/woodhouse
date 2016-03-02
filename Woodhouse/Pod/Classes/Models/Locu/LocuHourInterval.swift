@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nosce
 
 class LocuHourInterval: NSObject {
     var start: String!
@@ -18,10 +19,7 @@ class LocuHourInterval: NSObject {
         end = _e
     }
     
-    func printModel() -> String {
-        if let start = start, end = end {
-            return ("\(start) - \(end)")
-        }
-        return ""
+    func printModel() {
+        Nosce.printObject(reflecting: self, alias: "Interval:", tab: 1)
     }
 }

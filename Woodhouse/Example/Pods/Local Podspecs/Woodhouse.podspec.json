@@ -31,6 +31,9 @@
     ],
     "AlamofireObjectMapper": [
       "~> 2.1"
+    ],
+    "Nosce": [
+
     ]
   }
 }

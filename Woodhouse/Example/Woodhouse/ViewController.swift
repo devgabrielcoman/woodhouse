@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        LocuService.searchNameGeo(name: "RB", latitude: 32.792027350301, longitude: -79.8816662056433)
+        LocuService.searchNameGeo(name: "R", latitude: 32.792027350301, longitude: -79.8816662056433)
     
     }
 

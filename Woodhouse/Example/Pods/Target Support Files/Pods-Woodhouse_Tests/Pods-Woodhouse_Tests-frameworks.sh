@@ -55,6 +55,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Woodhouse_Tests/Alamofire.framework'
   install_framework 'Pods-Woodhouse_Tests/AlamofireObjectMapper.framework'
   install_framework 'Pods-Woodhouse_Tests/Dollar.framework'
+  install_framework 'Pods-Woodhouse_Tests/Nosce.framework'
   install_framework 'Pods-Woodhouse_Tests/ObjectMapper.framework'
   install_framework 'Pods-Woodhouse_Tests/Woodhouse.framework'
 fi
@@ -62,6 +63,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Woodhouse_Tests/Alamofire.framework'
   install_framework 'Pods-Woodhouse_Tests/AlamofireObjectMapper.framework'
   install_framework 'Pods-Woodhouse_Tests/Dollar.framework'
+  install_framework 'Pods-Woodhouse_Tests/Nosce.framework'
   install_framework 'Pods-Woodhouse_Tests/ObjectMapper.framework'
   install_framework 'Pods-Woodhouse_Tests/Woodhouse.framework'
 fi

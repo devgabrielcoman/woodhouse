@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuLocation: NSObject, Mappable {
     var address1: String!
@@ -35,16 +36,7 @@ class LocuLocation: NSObject, Mappable {
     }
     
     func printModel() {
-        print("location: ")
-        let mirrored = Mirror(reflecting: self)
-        for (_, attr) in mirrored.children.enumerate() {
-            if let property_name = attr.label as String! {
-                if property_name != "geo" {
-                    print("\t|-- \(property_name) = \(attr.value)")
-                } else {
-                    geo?.printModel()
-                }
-            }
-        }
+        Nosce.printObject(reflecting: self, alias: "Location:", tab: 0, exceptFields: ["geo"])
+        geo?.printModel()
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Dollar
+import Nosce
 
 class LocuMenu: NSObject, Mappable {
     var menuName: String!
@@ -26,9 +27,7 @@ class LocuMenu: NSObject, Mappable {
     }
     
     func printModel() {
-        print("menu: ")
-        print("\t|-- menuName: \(menuName)")
-        print("\t|-- currencySymbol: \(currencySymbol)")
+        Nosce.printObject(reflecting: self, alias: "Menu: ", tab: 0, exceptFields: ["sections"])
         $.each(sections) { (index, section: LocuSection) in
             section.printModel()
         }

@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Dollar
+import Nosce
 
 class LocuSectionObject: NSObject, Mappable {
     var type: String!
@@ -32,12 +33,7 @@ class LocuSectionObject: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t\t\t|-- object: ")
-        print("\t\t\t\t|-- type: \(type)")
-        print("\t\t\t\t|-- text: \(text)")
-        print("\t\t\t\t|-- name: \(name)")
-        print("\t\t\t\t|-- description: \(objectDescription)")
-        print("\t\t\t\t|-- price: \(price)")
+        Nosce.printObject(reflecting: self, alias: "Menu Object: ", tab: 3, exceptFields: ["optionGroups"])
         $.each(optionGroups) { (index, option: LocuOptionGroupObject) in
             option.printModel()
         }

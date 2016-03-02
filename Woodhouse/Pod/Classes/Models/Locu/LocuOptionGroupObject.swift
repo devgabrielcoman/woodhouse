@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Dollar
+import Nosce
 
 class LocuOptionGroupObject: NSObject, Mappable {
     var type: String!
@@ -26,9 +27,7 @@ class LocuOptionGroupObject: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t\t\t\t|-- option group:")
-        print("\t\t\t\t\t|-- type: \(type)")
-        print("\t\t\t\t\t|-- text: \(text)")
+        Nosce.printObject(reflecting: self, alias: "Option Group:", tab: 4, exceptFields: ["options"])
         $.each(options) { (index, option: LocuOptionObject) in
             option.printModel()
         }

@@ -104,48 +104,27 @@ class LocuHours: NSObject, Mappable {
     }
     
     func printModel() {
-        print("openHours: ")
-        
-        var monOut = "\t|-- monday: "
-        $.each(monday) { (index, interval) in
-            monOut += "\((interval as LocuHourInterval).printModel()) "
+        print("Open Hours:")
+        $.each(monday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        
-        var tueOut = "\t|-- tuesday: "
-        $.each(tuesday) { (index, interval) in
-            tueOut += "\((interval as LocuHourInterval).printModel()) "
+        $.each(tuesday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        
-        var wedOut = "\t|-- wednesday: "
-        $.each(wednesday) { (index, interval) in
-            wedOut += "\((interval as LocuHourInterval).printModel()) "
+        $.each(wednesday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        
-        var thuOut = "\t|-- thursday: "
-        $.each(thursday) { (index, interval) in
-            thuOut += "\((interval as LocuHourInterval).printModel()) "
+        $.each(thursday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        
-        var friOut = "\t|-- friday: "
-        $.each(friday) { (index, interval) in
-            friOut += "\((interval as LocuHourInterval).printModel()) "
+        $.each(friday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        
-        var satOut = "\t|-- saturday: "
-        $.each(saturday) { (index, interval) in
-            satOut += "\((interval as LocuHourInterval).printModel()) "
+        $.each(saturday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        
-        var sunOut = "\t|-- sunday: "
-        $.each(sunday) { (index, interval) in
-            sunOut += "\((interval as LocuHourInterval).printModel()) "
+        $.each(sunday) { (index, interval: LocuHourInterval) in
+            interval.printModel()
         }
-        print(monOut)
-        print(tueOut)
-        print(wedOut)
-        print(thuOut)
-        print(friOut)
-        print(satOut)
-        print(sunOut)
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Dollar
+import Nosce
 
 class LocuSection: NSObject, Mappable {
     var sectionName: String!
@@ -24,8 +25,7 @@ class LocuSection: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t|-- section: ")
-        print("\t\t|-- sectionName: \(sectionName)")
+        Nosce.printObject(reflecting: self, alias: "Section:", tab: 1, exceptFields: ["subsections"])
         $.each(subsections) { (index, subsection: LocuSubsection) in
             subsection.printModel()
         }

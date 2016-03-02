@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuPaymentMethods: NSObject, Mappable {
     var visa: Bool!
@@ -43,12 +44,6 @@ class LocuPaymentMethods: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t|-- payment: ")
-        let mirrored = Mirror(reflecting: self)
-        for (_, attr) in mirrored.children.enumerate() {
-            if let property_name = attr.label as String! {
-                print("\t\t|-- \(property_name) = \(attr.value)")
-            }
-        }
+        Nosce.printObject(reflecting: self, alias: "Payment:", tab: 1)
     }
 }

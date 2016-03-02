@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuDelivery: NSObject, Mappable {
     var willDeliver: Bool!
@@ -25,9 +26,7 @@ class LocuDelivery: NSObject, Mappable {
     }
     
     func printModel() {
-        print("delivery")
-        print("\twillDeliver: \(willDeliver)")
-        print("\tminimumOrder: \(minimumOrder)")
+        Nosce.printObject(reflecting: self, alias: "Delivery:", tab: 0, exceptFields: ["hours"])
         hours?.printModel()
     }
 }

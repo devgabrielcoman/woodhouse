@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuContact: NSObject, Mappable {
     var phone: String!
@@ -27,12 +28,6 @@ class LocuContact: NSObject, Mappable {
     }
     
     func printModel() {
-        print("contact:")
-        let mirrored = Mirror(reflecting: self)
-        for (_, attr) in mirrored.children.enumerate() {
-            if let property_name = attr.label as String! {
-                print("\t|-- \(property_name) = \(attr.value)")
-            }
-        }
+        Nosce.printObject(reflecting: self, alias: "Contact:", tab: 0)
     }
 }

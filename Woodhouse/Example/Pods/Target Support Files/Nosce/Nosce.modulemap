@@ -1,0 +1,6 @@
+framework module Nosce {
+  umbrella header "Nosce-umbrella.h"
+
+  export *
+  module * { export * }
+}

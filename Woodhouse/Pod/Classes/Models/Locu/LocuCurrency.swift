@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuCurrency: NSObject, Mappable {
     var symbol: String!
@@ -23,6 +24,6 @@ class LocuCurrency: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t|-- currency \(symbol) \(name)")
+        Nosce.printObject(reflecting: self, alias: "Currency:", tab: 1)
     }
 }

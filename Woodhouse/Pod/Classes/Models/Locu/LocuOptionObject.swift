@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import Nosce
 
 class LocuOptionObject: NSObject, Mappable {
     var name: String!
@@ -23,8 +24,6 @@ class LocuOptionObject: NSObject, Mappable {
     }
     
     func printModel() {
-        print("\t\t\t\t\t|-- option object: ")
-        print("\t\t\t\t\t\t|-- name: \(name)")
-        print("\t\t\t\t\t\t|-- price: \(price)")
+        Nosce.printObject(reflecting: self, alias: "Option:", tab: 5)
     }
 }

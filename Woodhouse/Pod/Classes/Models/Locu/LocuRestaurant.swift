@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Dollar
+import Nosce
 
 class LocuRestaurant: NSObject, Mappable {
     var locuId: String!
@@ -55,15 +56,7 @@ class LocuRestaurant: NSObject, Mappable {
     }
     
     func printModel() {
-        print("general: ")
-        print("\t|-- locuId: \(locuId)")
-        print("\t|-- name: \(name)")
-        print("\t|-- shortName: \(shortName)")
-        print("\t|-- description: \(restaurantDescription)")
-        print("\t|-- websiteURL: \(websiteURL)")
-        print("\t|-- menuURL: \(menuURL)")
-        print("\t|-- redirectedFrom: \(redirectedFrom)")
-        
+        Nosce.printObject(reflecting: self, alias: "General:", tab: 0, fields: ["locuId", "name", "shortName", "restaurantDescription", "websiteURL", "menuURL", "redirectedFrom"])
         $.each(categories) { (index, category: LocuCategory) in
             category.printModel()
         }

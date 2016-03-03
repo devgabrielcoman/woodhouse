@@ -10,6 +10,7 @@ import UIKit
 
 import ObjectMapper
 import Nosce
+import Dollar
 
 class OMenuRestaurant: NSObject, Mappable {
     var uuid: String!
@@ -18,6 +19,8 @@ class OMenuRestaurant: NSObject, Mappable {
     var version: String!
     var updatedTimestamp: Int32!
     var restaurantInfo: OMenuRestaurantInfo?
+    var environmentInfo: OMenuEnvironmentInfo?
+    var menus: [OMenuMenu] = []
     
     required init?(_ map: Map){
         
@@ -38,5 +41,9 @@ class OMenuRestaurant: NSObject, Mappable {
     func printModel() {
         Nosce.printObject(reflecting: self, alias: "OMenu Info", tab: 0, fields: ["uuid", "accuracy", "privacy", "version", "updatedTimestamp"])
         restaurantInfo?.printModel()
+        environmentInfo?.printModel()
+        $.each(menus) { (index, menu: OMenuMenu) in
+            menu.printModel()
+        }
     }
 }

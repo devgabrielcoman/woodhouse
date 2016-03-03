@@ -12,7 +12,7 @@ import Nosce
 
 class LocuDelivery: NSObject, Mappable {
     var willDeliver: Bool!
-    var minimumOrder: Float!
+    var minimumOrder: String!
     var hours: LocuHours?
     
     required init?(_ map: Map) {

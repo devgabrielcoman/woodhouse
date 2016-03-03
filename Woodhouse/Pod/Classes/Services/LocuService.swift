@@ -55,7 +55,7 @@ public class LocuService: NSObject, ServiceProtocol {
                 $.each(locu) { (index, elem: LocuRestaurant) in
                     elem.printModel()
                     let omf: OMenuRestaurant = elem.convertToOpenMenu()
-//                    omf.printModel()
+                    omf.printModel()
                 }
             }
         }

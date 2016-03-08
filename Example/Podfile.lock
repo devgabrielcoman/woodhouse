@@ -4,7 +4,7 @@ PODS:
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
   - Dollar (5.0.0)
-  - Nosce (0.1.4):
+  - Nosce (0.1.5):
     - Dollar
   - ObjectMapper (1.1.5)
   - Woodhouse (0.1.0):
@@ -24,8 +24,8 @@ SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
-  Nosce: 0b2cbde813b038c5b8104b59e2aa2d463782c542
+  Nosce: 0f689b67ff60ae41c793184cc6dbcbe08caec3f6
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
-  Woodhouse: a68ad0e30c52f124849c652fc47af1583d647899
+  Woodhouse: dc3a8e42b77313f0d60e4b9bcea385fdd4bea17b
 
-COCOAPODS: 0.39.0
+COCOAPODS: 0.38.2

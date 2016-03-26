@@ -11,6 +11,7 @@ import Alamofire
 import Dollar
 import ObjectMapper
 import AlamofireObjectMapper
+import KeyPathTransformer
 
 public class LocuService: NSObject, ServiceProtocol {
     
@@ -18,7 +19,7 @@ public class LocuService: NSObject, ServiceProtocol {
     private static let Key: String = "a246184db3876f5e20ffdbeea74188e79670c49d"
     private static let Url: String = "https://api.locu.com/v2/venue/search/"
     private static let Radius: Int = 300
-    private static let Fields: [String] = ["name", "location", "contact", "categories", "open_hours", "delivery", "extended", "menus"]
+    private static let Fields: [String] = ["name", "location", "contact", "categories", "open_hours", "delivery", "extended", /*"menus"*/]
     
     //
     // function that takes three basic search parameters and peforms a search
@@ -49,16 +50,37 @@ public class LocuService: NSObject, ServiceProtocol {
             "venue_queries":[ query ]
         ]
         
-        // and make the request
-        Alamofire.request(.POST, Url, parameters: parameters, encoding: .JSON).responseArray("venues") { (response: Response<[LocuRestaurant], NSError>) -> Void in
-            if let locu = response.result.value {
-                $.each(locu) { (index, elem: LocuRestaurant) in
-                    elem.printModel()
-                    let omf: OMenuRestaurant = elem.convertToOpenMenu()
-                    omf.printModel()
+        Alamofire.request(.POST, Url, parameters: parameters, encoding: .JSON).responseJSON { response in
+            
+            switch response.result {
+            case .Success(let JSON):
+                if let response = JSON as? Dictionary<String, AnyObject>,
+                   let venues = response["venues"] as? Array<AnyObject> {
+                    
+                    for locuVenue: AnyObject in venues {
+                        let venue = locuVenue as! Dictionary<String, AnyObject>
+                        print(venue)
+                        print("##############################")
+                        print(mapLocuToOMenu(venue))
+                    }
+                    
                 }
+            case .Failure(let error):
+                print("Request failed with error: \(error)")
             }
+            
         }
+        
+//        // and make the request
+//        Alamofire.request(.POST, Url, parameters: parameters, encoding: .JSON).responseArray("venues") { (response: Response<[LocuRestaurant], NSError>) -> Void in
+//            if let locu = response.result.value {
+//                $.each(locu) { (index, elem: LocuRestaurant) in
+//                    elem.printModel()
+//                    let omf: OMenuRestaurant = elem.convertToOpenMenu()
+//                    omf.printModel()
+//                }
+//            }
+//        }
     }
     
     //

@@ -25,4 +25,5 @@ Pod::Spec.new do |s|
   s.dependency 'Dollar'
   s.dependency 'AlamofireObjectMapper', '~> 2.1'
   s.dependency 'Nosce'
+  s.dependency 'KeyPathTransformer'
 end

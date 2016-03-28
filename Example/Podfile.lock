@@ -4,7 +4,7 @@ PODS:
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
   - Dollar (5.0.0)
-  - KeyPathTransformer (0.2.0):
+  - KeyPathTransformer (0.2.4):
     - Dollar
   - Nosce (0.1.5):
     - Dollar
@@ -27,7 +27,7 @@ SPEC CHECKSUMS:
   Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
-  KeyPathTransformer: 709b2b7e37750b9638f75b20eae2ca6efe3eef6e
+  KeyPathTransformer: 7932293f5486c29e49f3e21c73e0f847e1dd6d6e
   Nosce: 0f689b67ff60ae41c793184cc6dbcbe08caec3f6
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   Woodhouse: faa4ec676e73e8b597b722d90ef31f0465b1869b

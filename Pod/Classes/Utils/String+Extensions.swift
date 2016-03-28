@@ -26,7 +26,7 @@ public extension String {
         let length = alphabet.characters.count
         
         var uuid: [String] = []
-        for var i = 0; i < uuidLength; i++ {
+        for _ in 0 ..< uuidLength {
             let rand = Int(arc4random_uniform((__uint32_t)(length)))
             let char = alphabet.sub(rand, rand+1)
             uuid.append(char)

@@ -43,5 +43,9 @@ public extension String {
         let p5 = createUUID(5)
         return "\(p1)-\(p2)-\(p3)-\(p4)-\(p5)"
     }
+    
+    func urlEncode() -> String {
+        return self.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+    }
 }
 

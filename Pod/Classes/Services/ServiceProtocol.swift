@@ -9,7 +9,13 @@
 import UIKit
 
 protocol ServiceProtocol {
-    static func searchNameGeo(name n: String?, latitude lat: Float?, longitude lng: Float?)
-    static func searchName(name n:String)
-    static func searchGeo(latitude lat: Float, longitude lng: Float)
+    /**
+     The basic Service protocol function needed to implement a search
+     
+     - parameter n:   the name query
+     - parameter lat: latitude
+     - parameter lng: longitude
+     - parameter rad: radius
+     */
+    static func search(name n: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?)
 }

@@ -9,8 +9,6 @@
 import UIKit
 import Alamofire
 import Dollar
-import ObjectMapper
-import AlamofireObjectMapper
 import KeyPathTransformer
 
 public class LocuService: NSObject, ServiceProtocol {
@@ -18,15 +16,21 @@ public class LocuService: NSObject, ServiceProtocol {
     // constants for Locu
     private static let Key: String = "a246184db3876f5e20ffdbeea74188e79670c49d"
     private static let Url: String = "https://api.locu.com/v2/venue/search/"
-    private static let Radius: Int = 300
     private static let Fields: [String] = ["name", "location", "contact", "categories", "open_hours", "delivery", "extended", /*"menus"*/]
     
-    //
-    // function that takes three basic search parameters and peforms a search
-    // @param: name
-    // @param: latitude
-    // @param: longitude
-    public static func searchNameGeo(name n: String?, latitude lat: Float?, longitude lng: Float?) {
+    /**
+     Function that executes a basic search through Locu API for a location 
+     based on given parameters
+     
+     - parameter n:   the Name of the restaurant
+     - parameter lat: latitude as float
+     - parameter lng: longitude as float
+     - parameter rad: the radius in meters
+     */
+    public static func search(name n: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
+        // form the final URL
+        let finalUrl = Url
+        
         // form the base query object - starts as empty
         var query: [String : AnyObject] = [:]
         
@@ -35,10 +39,10 @@ public class LocuService: NSObject, ServiceProtocol {
             query["name"] = _n;
         }
         // and location
-        if let _l1 = lat, _l2 = lng {
+        if let _l1 = lat, _l2 = lng, _rad = rad {
             query["location"] = [
                 "geo": [
-                    "$in_lat_lng_radius":[_l1, _l2, Radius]
+                    "$in_lat_lng_radius":[_l1, _l2, _rad]
                 ]
             ]
         }
@@ -50,15 +54,14 @@ public class LocuService: NSObject, ServiceProtocol {
             "venue_queries":[ query ]
         ]
         
-        Alamofire.request(.POST, Url, parameters: parameters, encoding: .JSON).responseJSON { response in
+        Alamofire.request(.POST, finalUrl, parameters: parameters, encoding: .JSON).responseJSON { response in
             
             switch response.result {
             case .Success(let JSON):
-                if let response = JSON as? Dictionary<String, AnyObject>,
-                   let venues = response["venues"] as? Array<AnyObject> {
+                if let response = JSON as? [String:AnyObject],
+                   let venues = response["venues"] as? [AnyObject] as? [[String:AnyObject]] {
                     
-                    for locuVenue: AnyObject in venues {
-                        let venue = locuVenue as! Dictionary<String, AnyObject>
+                    $.each(venues) { (venue: [String:AnyObject]) in
                         print(venue)
                         print("##############################")
                         print(mapLocuToOMenu(venue))
@@ -68,30 +71,6 @@ public class LocuService: NSObject, ServiceProtocol {
             case .Failure(let error):
                 print("Request failed with error: \(error)")
             }
-            
         }
-        
-//        // and make the request
-//        Alamofire.request(.POST, Url, parameters: parameters, encoding: .JSON).responseArray("venues") { (response: Response<[LocuRestaurant], NSError>) -> Void in
-//            if let locu = response.result.value {
-//                $.each(locu) { (index, elem: LocuRestaurant) in
-//                    elem.printModel()
-//                    let omf: OMenuRestaurant = elem.convertToOpenMenu()
-//                    omf.printModel()
-//                }
-//            }
-//        }
-    }
-    
-    //
-    // simplified functions derived from most generic search
-    public static func searchName(name n: String) {
-        searchNameGeo(name: n, latitude: nil, longitude: nil)
-    }
-    
-    //
-    // simplified functions derived from most generic search
-    public static func searchGeo(latitude lat: Float, longitude lng: Float) {
-        searchNameGeo(name: nil, latitude: lat, longitude: lng)
     }
 }

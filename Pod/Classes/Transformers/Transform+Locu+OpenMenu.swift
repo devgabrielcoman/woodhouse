@@ -28,7 +28,7 @@ func mapLocuToOMenu(locu: [String:AnyObject]) -> [String:AnyObject] {
     t1["restaurant_info.restaurant_name"] = t1["name"]
     t1["restaurant_info.brief_description"] = t1["description"]
     t1["restaurant_info.full_description"] = t1["description"]
-    t1["restaurant_info.addres_1"] = t1["location.address1"]
+    t1["restaurant_info.address_1"] = t1["location.address1"]
     t1["restaurant_info.address_2"] = t1["location.address2"]
     t1["restaurant_info.city_town"] = t1["location.locality"]
     t1["restaurant_info.state_province"] = t1["location.region"]

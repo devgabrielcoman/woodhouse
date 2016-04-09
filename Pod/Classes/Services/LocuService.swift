@@ -73,4 +73,8 @@ public class LocuService: NSObject, ServiceProtocol {
             }
         }
     }
+    
+    static func details(id pid: String, callback: ([String : AnyObject]) -> Void) {
+        // nothing
+    }
 }

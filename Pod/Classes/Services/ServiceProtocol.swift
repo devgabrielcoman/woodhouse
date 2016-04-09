@@ -18,4 +18,5 @@ protocol ServiceProtocol {
      - parameter rad: radius
      */
     static func search(name n: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?)
+    static func details(id pid: String, callback: ([String:AnyObject]) -> Void)
 }

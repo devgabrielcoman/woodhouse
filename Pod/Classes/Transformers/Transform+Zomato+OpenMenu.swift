@@ -26,7 +26,7 @@ func mapZomatoToOMenu(zomato: [String:AnyObject]) -> [String:AnyObject] {
     
     // [OK] Restaurant info
     t["restaurant_info.restaurant_name"] = t["restaurant.name"]
-    t["restaurant_info.addres_1"] = t["restaurant.location.address"]
+    t["restaurant_info.address_1"] = t["restaurant.location.address"]
     t["restaurant_info.city_town"] = t["restaurant.location.locality"]
     t["restaurant_info.postal_code"] = t["restaurant.location.zipcode"]
     t["restaurant_info.country"] = t["restaurant.location.country_id"]

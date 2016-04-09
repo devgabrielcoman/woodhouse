@@ -9,12 +9,32 @@ PODS:
   - Nosce (0.1.5):
     - Dollar
   - ObjectMapper (1.2.0)
+  - OMGHTTPURLRQ (3.1.1):
+    - OMGHTTPURLRQ/RQ (= 3.1.1)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
+  - OMGHTTPURLRQ/RQ (3.1.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - PromiseKit (3.1.0):
+    - PromiseKit/Foundation (= 3.1.0)
+    - PromiseKit/QuartzCore (= 3.1.0)
+    - PromiseKit/UIKit (= 3.1.0)
+  - PromiseKit/CorePromise (3.1.0)
+  - PromiseKit/Foundation (3.1.0):
+    - OMGHTTPURLRQ (~> 3.1.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.1.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.1.0):
+    - PromiseKit/CorePromise
   - Woodhouse (0.1.0):
     - Alamofire (~> 3.0)
     - AlamofireObjectMapper (~> 2.1)
     - Dollar
     - KeyPathTransformer
     - Nosce
+    - PromiseKit
 
 DEPENDENCIES:
   - Woodhouse (from `../`)
@@ -30,6 +50,8 @@ SPEC CHECKSUMS:
   KeyPathTransformer: 7932293f5486c29e49f3e21c73e0f847e1dd6d6e
   Nosce: 0f689b67ff60ae41c793184cc6dbcbe08caec3f6
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
-  Woodhouse: faa4ec676e73e8b597b722d90ef31f0465b1869b
+  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  PromiseKit: 7ed2a3fc5217695305a55a8c47cb3a17ff5fde0d
+  Woodhouse: 9ae879f2a5bb40ffdf33f90ca276be25b381f50f
 
 COCOAPODS: 0.38.2

@@ -51,7 +51,6 @@ public class ZomatoService: NSObject, ServiceProtocol {
         req.HTTPMethod = "GET"
         req.setValue(Key, forHTTPHeaderField: "user_key")
         Alamofire.request(req).responseJSON { response in
-            
             switch response.result {
             case .Success(let JSON):
                 if let response = JSON as? [String:AnyObject],
@@ -69,5 +68,9 @@ public class ZomatoService: NSObject, ServiceProtocol {
             }
             
         }
+    }
+    
+    static func details(id pid: String, callback: ([String : AnyObject]) -> Void) {
+        // nothing
     }
 }

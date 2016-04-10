@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.3.0)
+  - Alamofire (3.3.1)
   - AlamofireObjectMapper (2.1.2):
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
@@ -16,17 +16,17 @@ PODS:
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (3.1.1)
-  - PromiseKit (3.1.0):
-    - PromiseKit/Foundation (= 3.1.0)
-    - PromiseKit/QuartzCore (= 3.1.0)
-    - PromiseKit/UIKit (= 3.1.0)
-  - PromiseKit/CorePromise (3.1.0)
-  - PromiseKit/Foundation (3.1.0):
+  - PromiseKit (3.1.1):
+    - PromiseKit/Foundation (= 3.1.1)
+    - PromiseKit/QuartzCore (= 3.1.1)
+    - PromiseKit/UIKit (= 3.1.1)
+  - PromiseKit/CorePromise (3.1.1)
+  - PromiseKit/Foundation (3.1.1):
     - OMGHTTPURLRQ (~> 3.1.0)
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.1.0):
+  - PromiseKit/QuartzCore (3.1.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.1.0):
+  - PromiseKit/UIKit (3.1.1):
     - PromiseKit/CorePromise
   - Woodhouse (0.1.0):
     - Alamofire (~> 3.0)
@@ -44,14 +44,14 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
   KeyPathTransformer: 7932293f5486c29e49f3e21c73e0f847e1dd6d6e
   Nosce: 0f689b67ff60ae41c793184cc6dbcbe08caec3f6
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
-  PromiseKit: 7ed2a3fc5217695305a55a8c47cb3a17ff5fde0d
+  PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
   Woodhouse: 9ae879f2a5bb40ffdf33f90ca276be25b381f50f
 
 COCOAPODS: 0.38.2

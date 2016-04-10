@@ -41,6 +41,14 @@ public class GoogleDetails: NSObject, ServiceProtocol {
         return nil
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        if  let detail = JSON as? [String:AnyObject],
+            let final = detail["result"] as? [String:AnyObject] {
+            return final
+        }
+        return [:]
+    }
+    
     public func search(placeid p: String) {
         placeId = p
         dataService.execute()

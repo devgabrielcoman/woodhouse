@@ -26,6 +26,7 @@ protocol ServiceProtocol {
     func query() -> [String:AnyObject]?
     func headers() -> [String:String]?
     func parameters() -> [String:AnyObject]?
+    func process(JSON: AnyObject) -> AnyObject
 }
 
 /**
@@ -82,7 +83,8 @@ class DataService: NSObject {
         Alamofire.request(req).responseJSON { response in
             switch response.result {
             case .Success(let JSON):
-                print(JSON)
+                let result = delegate.process(JSON)
+                print(result)
             case .Failure(let error):
                 print("Request failed with error: \(error)")
             }

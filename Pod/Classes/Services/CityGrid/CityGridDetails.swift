@@ -43,6 +43,15 @@ public class CityGridDetails: NSObject, ServiceProtocol {
         return nil
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        if let detail = JSON as? [String:AnyObject],
+           let locations = detail["locations"] as? [[String:AnyObject]],
+           let final = locations[0] as? [String: AnyObject] {
+           return final
+        }
+        return [:]
+    }
+    
     public func search(phone p: String) {
         self.phone = p
         dataService.execute()

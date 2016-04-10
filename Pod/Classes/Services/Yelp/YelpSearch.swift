@@ -51,6 +51,10 @@ public class YelpSearch: NSObject, ServiceProtocol {
         return nil
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        return [:]
+    }
+    
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {

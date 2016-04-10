@@ -12,9 +12,9 @@ class YelpAuth: NSObject, AuthProtocol {
     static func auth() -> [String : String]? {
         return [
             "oauth_consumer_key":"KYwum5JY_tOVvObefPzF5A",
-            "ConsumerSecret":"YqJtzEpgBgoSLNT2EO5CjbMVGQc",
-            "Token":"87uB8dcVpGTVexi6d1vT0A-e--bwpgEn",
-            "TokenSecret":"19sDBGvmr2fIO2BEDGpRtGB1Rm8"
+            "oauth_token":"87uB8dcVpGTVexi6d1vT0A-e--bwpgEn",
+            "oauth_consumer_secret":"YqJtzEpgBgoSLNT2EO5CjbMVGQc",
+            "oauth_token_secret":"19sDBGvmr2fIO2BEDGpRtGB1Rm8"
         ]
     }
 }

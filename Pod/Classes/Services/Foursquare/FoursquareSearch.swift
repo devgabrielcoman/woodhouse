@@ -55,47 +55,22 @@ public class FoursquareSearch: NSObject, ServiceProtocol {
         return nil
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        if  let JSON = JSON as? [String:AnyObject],
+            let response = JSON["response"] as? [String: AnyObject],
+            let venues = response["venues"] as? [AnyObject] as? [[String:AnyObject]] {
+        
+                return venues
+        }
+        
+        return [:]
+    }
+    
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
         dataService.execute()
-        
-//        var query: [String] = []
-//        query.append("client_id=\(ClientId)")
-//        query.append("client_secret=\(ClientSecret)")
-//        query.append("v=\(Version)")
-//        if let n = n {
-//            query.append("query=\(n.urlEncode())")
-//        }
-//        if let lat = lat, let lng = lng {
-//            query.append("ll=\(lat),\(lng)")
-//        }
-//        if let rad = rad {
-//            query.append("radius=\(rad)")
-//        }
-//        let finalUrl = Url + (query.count > 0 ? "?" + query.joinWithSeparator("&") : "")
-//        
-//        Alamofire.request(.GET, finalUrl, parameters: nil, encoding: .JSON).responseJSON { response in
-//            
-//            switch response.result {
-//            case .Success(let JSON):
-//                if let JSON = JSON as? [String:AnyObject],
-//                   let response = JSON["response"] as? [String: AnyObject],
-//                   let venues = response["venues"] as? [AnyObject] as? [[String:AnyObject]] {
-//                    
-//                    $.each(venues) { (venue: [String:AnyObject]) in
-//                        print(venue)
-//                        print("><><><><><><><><><><><><><")
-//                        print(mapFoursquareToOMenu(venue))
-//                        print("##########################")
-//                    }
-//                    
-//                }
-//            case .Failure(let error):
-//                print("Request failed with error: \(error)")
-//            }
-//        }
     }
 }

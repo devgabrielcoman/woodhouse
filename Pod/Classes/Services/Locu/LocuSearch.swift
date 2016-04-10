@@ -56,57 +56,19 @@ public class LocuSearch: NSObject, ServiceProtocol {
         ]
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        if  let JSON = JSON as? [String:AnyObject],
+            let venues = JSON["venues"] {
+            return venues
+        }
+        return [:]
+    }
+    
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
         dataService.execute()
-//        
-//        // form the final URL
-//        let finalUrl = Url
-//        
-//        // form the base query object - starts as empty
-//        var query: [String : AnyObject] = [:]
-//        
-//        // the ad name
-//        if let _n = n {
-//            query["name"] = _n;
-//        }
-//        // and location
-//        if let _l1 = lat, _l2 = lng, _rad = rad {
-//            query["location"] = [
-//                "geo": [
-//                    "$in_lat_lng_radius":[_l1, _l2, _rad]
-//                ]
-//            ]
-//        }
-//        
-//        // form the final parameters
-//        let parameters: [String : AnyObject] = [
-//            "api_key": Key,
-//            "fields": Fields,
-//            "venue_queries":[ query ]
-//        ]
-//
-//        let URL = NSURL(string: finalUrl)!
-//        let req = NSMutableURLRequest(URL: URL)
-//        req.HTTPMethod = "POST"
-//        do {
-//            let data: NSData = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted)
-//            req.HTTPBody = data
-//        } catch {
-//            
-//        }
-//        
-//        Alamofire.request(req).responseJSON { response in
-//            switch response.result {
-//            case .Success(let JSON):
-//                print(JSON)
-//            case .Failure(let error):
-//                print("Request failed with error: \(error)")
-//            }
-//            
-//        }
     }
 }

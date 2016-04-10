@@ -55,54 +55,21 @@ public class ZomatoSearch: NSObject, ServiceProtocol {
         return nil
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        if  let response = JSON as? [String:AnyObject],
+            let venues = response["restaurants"] as? [AnyObject] as? [[String:AnyObject]] {
+            
+            return venues
+        }
+
+        return [:]
+    }
+    
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
         dataService.execute()
-//        
-//        var query: [String] = []
-//        if let n = n {
-//            query.append("q=\(n)".urlEncode())
-//        }
-//        if let lat = lat {
-//            query.append("lat=\(lat)")
-//        }
-//        if let lng = lng {
-//            query.append("lon=\(lng)")
-//        }
-//        if let rad = rad {
-//            query.append("radius=\(rad)")
-//        }
-//        let finalUrl = Url + (query.count > 0 ? "?" + query.joinWithSeparator("&") : "")
-//        
-//        // form the final parameters
-//        let parameters: [String : AnyObject] = [
-//            "user_key": Key
-//        ]
-//        
-//        let URL = NSURL(string: finalUrl)!
-//        let req = NSMutableURLRequest(URL: URL)
-//        req.HTTPMethod = "GET"
-//        req.setValue(Key, forHTTPHeaderField: "user_key")
-//        Alamofire.request(req).responseJSON { response in
-//            switch response.result {
-//            case .Success(let JSON):
-//                if let response = JSON as? [String:AnyObject],
-//                   let venues = response["restaurants"] as? [AnyObject] as? [[String:AnyObject]] {
-//                    
-//                    $.each(venues) { (venue: [String:AnyObject]) in
-//                        print(venue)
-//                        print("##############")
-//                        print(mapZomatoToOMenu(venue))
-//                    }
-//                
-//                }
-//            case .Failure(let error):
-//                print("Request failed with error: \(error)")
-//            }
-//            
-//        }
     }
 }

@@ -55,46 +55,20 @@ public class YellowPagesSearch: NSObject, ServiceProtocol {
         return nil
     }
     
+    func process(JSON: AnyObject) -> AnyObject {
+        if  let JSON = JSON as? [String:AnyObject],
+            let response = JSON["searchResult"] as? [String:AnyObject],
+            let listings = response["searchListings"] as? [String: AnyObject],
+            let venues = listings["searchListing"] as? [[String:AnyObject]] {
+            return venues
+        }
+        return [:]
+    }
+    
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         if let qry = qry, lat = lat, lng = lng, rad = rad {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
         dataService.execute()
-        
-//        var query: [String] = []
-//        if let n = n {
-//            query.append("term=\(n)".urlEncode())
-//        }
-//        if let lat = lat, lng = lng {
-//            query.append("searchloc=\(lat),\(lng)")
-//        }
-//        if let rad = rad {
-//            query.append("radius=\(rad)")
-//        }
-//        query.append("key=\(Key)")
-//        query.append("format=json")
-//        query.append("sort=distance")
-//        query.append("listingcount=10")
-//        let finalUrl = Url + (query.count > 0 ? "?" + query.joinWithSeparator("&") : "")
-//        
-//        Alamofire.request(.GET, finalUrl, parameters: nil, encoding: .JSON).responseJSON { response in
-//            
-//            switch response.result {
-//            case .Success(let JSON):
-//                if let JSON = JSON as? [String:AnyObject],
-//                   let response = JSON["searchResult"] as? [String:AnyObject],
-//                   let listings = response["searchListings"] as? [String: AnyObject],
-//                   let venues = listings["searchListing"] as? [[String:AnyObject]]
-//                {
-//                    print(listings)
-//                    
-////                    $.each(venues) { (venue: [String:AnyObject]) in
-////                        print(venue)
-////                    }
-//                }
-//            case .Failure(let error):
-//                print("Request failed with error: \(error)")
-//            }
-//        }
     }
 }

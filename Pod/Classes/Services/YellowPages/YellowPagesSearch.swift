@@ -12,9 +12,6 @@ import Dollar
 
 public class YellowPagesSearch: NSObject, ServiceProtocol {
     
-    private let Url: String = "http://api2.yp.com/listings/v1/search"
-    private let Key: String = "qptcklyknd"
-    
     private var qry: String = ""
     private var lat: Float = 0
     private var lng: Float = 0
@@ -99,9 +96,5 @@ public class YellowPagesSearch: NSObject, ServiceProtocol {
 //                print("Request failed with error: \(error)")
 //            }
 //        }
-    }
-    
-    func details(id pid: String, callback: ([String : AnyObject]) -> Void) {
-        // nothing
     }
 }

@@ -13,9 +13,6 @@ import KeyPathTransformer
 
 public class ZomatoSearch: NSObject, ServiceProtocol {
     
-    private let Key: String = "f69ef3e17a2826849fcd6e9398a9ba84"
-    private let Url: String = "https://developers.zomato.com/api/v2.1/search"
-    
     private var qry: String = ""
     private var lat: Float = 0
     private var lng: Float = 0
@@ -58,15 +55,6 @@ public class ZomatoSearch: NSObject, ServiceProtocol {
         return nil
     }
     
-    /**
-     Function that executes a basic search through Zomato API for a location
-     based on given parameters
-     
-     - parameter n:   the Name of the restaurant
-     - parameter lat: latitude as float
-     - parameter lng: longitude as float
-     - parameter rad: the radius in meters
-     */
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
@@ -116,9 +104,5 @@ public class ZomatoSearch: NSObject, ServiceProtocol {
 //            }
 //            
 //        }
-    }
-    
-    func details(id pid: String, callback: ([String : AnyObject]) -> Void) {
-        // nothing
     }
 }

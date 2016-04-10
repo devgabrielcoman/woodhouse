@@ -12,10 +12,6 @@ import Alamofire
 
 public class CityGridSearch: NSObject, ServiceProtocol {
 
-    private let url2: String = "https://api.citygridmedia.com/content/places/v2/detail"
-    private let url1: String = "https://api.citygridmedia.com/content/places/v2/search/latlon"
-    private let Key: String = "10000015518"
-    
     private var qry: String = ""
     private var lat: Float = 0
     private var lng: Float = 0
@@ -62,7 +58,6 @@ public class CityGridSearch: NSObject, ServiceProtocol {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
         dataService.execute()
-        
         
 //        var query: [String] = []
 //        if let n = n {

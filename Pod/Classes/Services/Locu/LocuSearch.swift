@@ -13,11 +13,6 @@ import KeyPathTransformer
 
 public class LocuSearch: NSObject, ServiceProtocol {
     
-    // constants for Locu
-    private let Key: String = "a246184db3876f5e20ffdbeea74188e79670c49d"
-    private let Url: String = "https://api.locu.com/v2/venue/search/"
-    private let Fields: [String] = ["name", "location", "contact", "categories", "open_hours", "delivery", "extended", /*"menus"*/]
-    
     private var qry: String = ""
     private var lat: Float = 0
     private var lng: Float = 0
@@ -61,15 +56,6 @@ public class LocuSearch: NSObject, ServiceProtocol {
         ]
     }
     
-    /**
-     Function that executes a basic search through Locu API for a location 
-     based on given parameters
-     
-     - parameter n:   the Name of the restaurant
-     - parameter lat: latitude as float
-     - parameter lng: longitude as float
-     - parameter rad: the radius in meters
-     */
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
@@ -122,9 +108,5 @@ public class LocuSearch: NSObject, ServiceProtocol {
 //            }
 //            
 //        }
-    }
-    
-    func details(id pid: String, callback: ([String : AnyObject]) -> Void) {
-        // nothing
     }
 }

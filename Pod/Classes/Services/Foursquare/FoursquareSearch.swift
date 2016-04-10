@@ -13,11 +13,6 @@ import KeyPathTransformer
 
 public class FoursquareSearch: NSObject, ServiceProtocol {
     
-    private let Url: String = "https://api.foursquare.com/v2/venues/search"
-    private let ClientId: String = "OXL4H4WB5BUFGAGTWFBX2FIEB3QNG1OCQCBMZQLOV3G1YTUJ"
-    private let ClientSecret: String = "W2YVIMKADZD54GZRZGPXDWM4515GP2GC5JCZUVGRTLBWPM33"
-    private let Version: String = "20130815"
-    
     private var dataService: DataService = DataService()
     private var qry: String = ""
     private var lat: Float = 0
@@ -60,15 +55,6 @@ public class FoursquareSearch: NSObject, ServiceProtocol {
         return nil
     }
     
-    /**
-     Function that executes a basic search through Zomato API for a location
-     based on given parameters
-     
-     - parameter n:   the Name of the restaurant
-     - parameter lat: latitude as float
-     - parameter lng: longitude as float
-     - parameter rad: the radius in meters
-     */
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
@@ -111,9 +97,5 @@ public class FoursquareSearch: NSObject, ServiceProtocol {
 //                print("Request failed with error: \(error)")
 //            }
 //        }
-    }
-    
-    internal func details(id pid: String, callback: ([String:AnyObject]) -> Void) {
-        // do nothing
     }
 }

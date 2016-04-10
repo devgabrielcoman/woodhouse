@@ -33,8 +33,14 @@ protocol ServiceProtocol {
  */
 class DataService: NSObject {
     
+    /**
+     * delegate variable for the Data Service class
+     */
     public var delegate: ServiceProtocol? = nil
     
+    /**
+     * override init
+     */
     override init() {
         super.init()
     }
@@ -80,7 +86,6 @@ class DataService: NSObject {
             case .Failure(let error):
                 print("Request failed with error: \(error)")
             }
-            
         }
     }
     

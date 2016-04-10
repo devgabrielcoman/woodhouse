@@ -13,10 +13,6 @@ import PromiseKit
 
 public class GoogleSearch: NSObject, ServiceProtocol {
     
-    private let url1: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-    private let url2: String = "https://maps.googleapis.com/maps/api/place/details/json"
-    private let Key: String = "AIzaSyAfdp5QoHl0fwrBmUAq-dqCvPMuwLPcou8"
-    
     private var qry: String = ""
     private var lat: Float = 0
     private var lng: Float = 0
@@ -53,15 +49,6 @@ public class GoogleSearch: NSObject, ServiceProtocol {
         return nil
     }
     
-    /**
-     Function that executes a basic search through Zomato API for a location
-     based on given parameters
-     
-     - parameter n:   the Name of the restaurant
-     - parameter lat: latitude as float
-     - parameter lng: longitude as float
-     - parameter rad: the radius in meters
-     */
     public func search(query qry: String?, latitude lat: Float?, longitude lng: Float?, radius rad: Float?) {
         
         if let qry = qry, lat = lat, lng = lng, rad = rad {
@@ -104,24 +91,24 @@ public class GoogleSearch: NSObject, ServiceProtocol {
 //        }
     }
     
-    func details(id pid: String, callback: ([String:AnyObject]) -> Void) {
-        var query: [String] = []
-        query.append("key=\(Key)")
-        query.append("placeid=\(pid)")
-        let finalUrl = url2 + "?" + query.joinWithSeparator("&")
-        
-        Alamofire.request(.GET, finalUrl, parameters: nil, encoding: .JSON).responseJSON { response in
-            switch response.result {
-            case .Success(let JSON):
-                if let detail = JSON as? [String:AnyObject],
-                    let final = detail["result"] as? [String:AnyObject] {
-                    callback(final)
-                } else {
-                    callback([:])
-                }
-            case .Failure(let error):
-                callback([:])
-            }
-        }
-    }
+//    func details(id pid: String, callback: ([String:AnyObject]) -> Void) {
+//        var query: [String] = []
+//        query.append("key=\(Key)")
+//        query.append("placeid=\(pid)")
+//        let finalUrl = url2 + "?" + query.joinWithSeparator("&")
+//        
+//        Alamofire.request(.GET, finalUrl, parameters: nil, encoding: .JSON).responseJSON { response in
+//            switch response.result {
+//            case .Success(let JSON):
+//                if let detail = JSON as? [String:AnyObject],
+//                    let final = detail["result"] as? [String:AnyObject] {
+//                    callback(final)
+//                } else {
+//                    callback([:])
+//                }
+//            case .Failure(let error):
+//                callback([:])
+//            }
+//        }
+//    }
 }

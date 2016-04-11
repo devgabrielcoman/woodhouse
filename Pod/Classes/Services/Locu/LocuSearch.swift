@@ -21,9 +21,10 @@ public class LocuSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = LocuAuth.sharedInstance
     }
-    
+
     func apiurl() -> String {
         return "https://api.locu.com/v2/venue/search/"
     }
@@ -36,13 +37,12 @@ public class LocuSearch: NSObject, ServiceProtocol {
         return nil
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return [
-            "api_key": (LocuAuth.auth()?["api_key"])!,
             "fields": ["name", "location", "contact", "categories", "open_hours", "delivery", "extended", /*"menus"*/],
             "venue_queries":[[
                 "name": qry.urlEncode(),

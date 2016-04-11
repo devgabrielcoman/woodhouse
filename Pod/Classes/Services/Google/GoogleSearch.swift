@@ -21,7 +21,8 @@ public class GoogleSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = GoogleAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -34,18 +35,17 @@ public class GoogleSearch: NSObject, ServiceProtocol {
     
     func query() -> [String : AnyObject]? {
         return [
-            "key": (GoogleAuth.auth()?["key"])!,
             "name":qry.urlEncode(),
             "location":"\(lat),\(lng)",
             "radius":rad
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

@@ -19,7 +19,8 @@ public class YelpSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = YelpAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -34,20 +35,15 @@ public class YelpSearch: NSObject, ServiceProtocol {
         return [
             "term":qry.urlEncode(),
             "location":"London",
-            "cll":"\(lat),\(lng)",
-            "oauth_signature_method":"HMAC-SHA1",
-            "oauth_timestamp":(NSInteger)(NSDate().timeIntervalSince1970),
-            "oauth_nonce":String.createUUID(6),
-            "oauth_version":"1.0",
-            "oauth_signature":"QBmGFvymKq2ye5g0MTKYhyWEt+o="
+            "cll":"\(lat),\(lng)"
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

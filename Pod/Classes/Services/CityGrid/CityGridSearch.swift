@@ -20,7 +20,8 @@ public class CityGridSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = CityGridAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -36,7 +37,6 @@ public class CityGridSearch: NSObject, ServiceProtocol {
             "type":"restaurant",
             "format":"json",
             "rpp":"5",
-            "publisher": (CityGridAuth.auth()?["publisher"])!,
             "what":qry.urlEncode(),
             "lat":lat,
             "lon":lng,
@@ -44,11 +44,11 @@ public class CityGridSearch: NSObject, ServiceProtocol {
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

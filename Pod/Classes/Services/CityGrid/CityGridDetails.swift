@@ -15,7 +15,8 @@ public class CityGridDetails: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = CityGridAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -30,16 +31,15 @@ public class CityGridDetails: NSObject, ServiceProtocol {
         return [
             "format":"json",
             "client_ip":"127.0.0.1",
-            "publisher": (CityGridAuth.auth()?["publisher"])!,
             "phone":phone
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

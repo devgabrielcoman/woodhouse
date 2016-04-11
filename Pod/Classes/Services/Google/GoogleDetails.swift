@@ -15,7 +15,8 @@ public class GoogleDetails: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = GoogleAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -28,16 +29,15 @@ public class GoogleDetails: NSObject, ServiceProtocol {
     
     func query() -> [String : AnyObject]? {
         return [
-            "placeid":placeId,
-            "key":(GoogleAuth.auth()?["key"])!
+            "placeid":placeId
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

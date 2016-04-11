@@ -11,10 +11,22 @@ import Dollar
 import Alamofire
 
 /**
+ * Auth Type enum
+ */
+enum AuthMethod {
+    case NONE
+    case SIMPLE
+    case OAUTH
+}
+
+/**
  *  Protocol for Authentication portion of each service
  */
 protocol AuthProtocol {
-    static func auth() -> [String:String]?
+    func method() -> AuthMethod
+    func query() -> [String:AnyObject]?
+    func header() -> [String:AnyObject]?
+    func body() -> [String:AnyObject]?
 }
 
 /**
@@ -24,8 +36,8 @@ protocol ServiceProtocol {
     func apiurl() -> String
     func method() -> String
     func query() -> [String:AnyObject]?
-    func headers() -> [String:String]?
-    func parameters() -> [String:AnyObject]?
+    func header() -> [String:AnyObject]?
+    func body() -> [String:AnyObject]?
     func process(JSON: AnyObject) -> AnyObject
 }
 
@@ -37,7 +49,8 @@ class DataService: NSObject {
     /**
      * delegate variable for the Data Service class
      */
-    public var delegate: ServiceProtocol? = nil
+    public var serviceDelegate: ServiceProtocol? = nil
+    public var authDelgate: AuthProtocol? = nil
     
     /**
      * override init
@@ -50,40 +63,63 @@ class DataService: NSObject {
      The main public function of the Data Service
      */
     func execute()  {
-        guard let delegate = delegate! as? ServiceProtocol else { return; }
+        guard let serviceDelegate = serviceDelegate! as? ServiceProtocol else { return }
+        guard let authDelgate = authDelgate! as? AuthProtocol else { return }
         
-        // 1. form url
-        var url = delegate.apiurl()
-        if let query = delegate.query(),
-           let queryString = flattenQuery(query) {
-           url += "?" + queryString
+        // 1. the three vars for the request
+        var url = serviceDelegate.apiurl()
+        var query: [String:AnyObject] = [:]
+        var header: [String:AnyObject] = [:]
+        var body: [String:AnyObject] = [:]
+        var authQuery: [String:AnyObject] = [:]
+        var authHeader:[String:AnyObject] = [:]
+        var authBody:[String:AnyObject] = [:]
+        
+        // 2. get additional data
+        if let q = serviceDelegate.query() {
+            query = q
+        }
+        if let h = serviceDelegate.header() {
+            header = h
+        }
+        if let b = serviceDelegate.body() {
+            body = b
         }
         
-        // 2. form the request
-        let URL = NSURL(string: url)!
+        // 3. get auth data
+        if let q = authDelgate.query() {
+            authQuery = q
+        }
+        if let h = authDelgate.header() {
+            authHeader = h
+        }
+        if let b = authDelgate.body() {
+            authBody = b
+        }
+        
+        // 4. sum data
+        sumParameters(into: &query, from: authQuery)
+        sumParameters(into: &header, from: authHeader)
+        sumParameters(into: &body, from: authBody)
+        
+        // 5. form the request
+        let finalUrl = url + flattenQuery(query)
+        let finalBody = serializeBody(body)
+        let URL = NSURL(string: finalUrl)!
         let req = NSMutableURLRequest(URL: URL)
-        req.HTTPMethod = delegate.method()
-        
-        // 3. add the http body, if it exists
-        if let parameters = delegate.parameters(),
-           let parameterData = serializePost(parameters) {
-            req.HTTPBody = parameterData
-        }
-        
-        // 4. add headers one by one
-        if let headers = delegate.headers() {
-            for key in headers.keys {
-                if let value = headers[key]! as? String {
-                    req.setValue(value, forHTTPHeaderField: key)
-                }
+        req.HTTPMethod = serviceDelegate.method()
+        req.HTTPBody = finalBody
+        for key in header.keys {
+            if let value = header[key]! as? String {
+                req.setValue(value, forHTTPHeaderField: key)
             }
         }
         
-        // 5. start the request
+        // 6. start the request
         Alamofire.request(req).responseJSON { response in
             switch response.result {
             case .Success(let JSON):
-                let result = delegate.process(JSON)
+                let result = serviceDelegate.process(JSON)
                 print(result)
             case .Failure(let error):
                 print("Request failed with error: \(error)")
@@ -98,7 +134,7 @@ class DataService: NSObject {
      
      - returns: a optional query string in the form name1=param1&name2=param2 ... 
      */
-    private func flattenQuery(query:[String:AnyObject]) -> String? {
+    private func flattenQuery(query:[String:AnyObject]) -> String {
         var queryArray:[String] = []
         
         for key in query.keys {
@@ -107,9 +143,9 @@ class DataService: NSObject {
             }
         }
         if queryArray.count >= 1 {
-            return queryArray.joinWithSeparator("&")
+            return "?" + queryArray.joinWithSeparator("&")
         }
-        return nil
+        return ""
     }
     
     /**
@@ -119,13 +155,26 @@ class DataService: NSObject {
      
      - returns: an optional NSData value
      */
-    private func serializePost(parameters:[String:AnyObject]) -> NSData? {
+    private func serializeBody(body:[String:AnyObject]) -> NSData? {
+        if body.count == 0 { return nil }
         var data: NSData
         do {
-            data = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted)
+            data = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.PrettyPrinted)
         } catch {
             return nil
         }
         return data
+    }
+    
+    /**
+     Adds to a referenced "into" dictionary the keys from another "from" dictionary
+     
+     - parameter i: the reference "into" dictionary
+     - parameter f: the "from" dictionary
+     */
+    private func sumParameters(inout into i: [String:AnyObject], from f: [String:AnyObject]){
+        for key in f.keys {
+            i[key] = f[key]
+        }
     }
 }

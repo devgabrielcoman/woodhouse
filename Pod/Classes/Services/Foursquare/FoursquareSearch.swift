@@ -21,7 +21,8 @@ public class FoursquareSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = FoursquareAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -40,18 +41,15 @@ public class FoursquareSearch: NSObject, ServiceProtocol {
         return [
             "query":qry.urlEncode(),
             "ll":"\(lat),\(lng)",
-            "radius":rad,
-            "client_id": (FoursquareAuth.auth()?["client_id"])!,
-            "client_secret": (FoursquareAuth.auth()?["client_secret"])!,
-            "v": (FoursquareAuth.auth()?["v"])!
+            "radius":rad
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

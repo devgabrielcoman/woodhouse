@@ -9,9 +9,24 @@
 import UIKit
 
 public class CityGridAuth: NSObject, AuthProtocol {
-    static func auth() -> [String : String]? {
+    
+    static let sharedInstance = CityGridAuth()
+    
+    func method() -> AuthMethod {
+        return .SIMPLE
+    }
+    
+    func query() -> [String : AnyObject]? {
         return [
             "publisher":"10000015518"
         ]
+    }
+    
+    func header() -> [String : AnyObject]? {
+        return nil
+    }
+    
+    func body() -> [String : AnyObject]? {
+        return nil
     }
 }

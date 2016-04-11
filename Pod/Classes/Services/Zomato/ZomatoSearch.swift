@@ -21,7 +21,8 @@ public class ZomatoSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = ZomatoAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -45,13 +46,11 @@ public class ZomatoSearch: NSObject, ServiceProtocol {
         ]
     }
     
-    func headers() -> [String : String]? {
-        return [
-            "user_key":(ZomatoAuth.auth()?["user_key"])!
-        ]
+    func header() -> [String : AnyObject]? {
+        return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

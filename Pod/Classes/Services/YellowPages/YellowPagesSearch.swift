@@ -20,7 +20,8 @@ public class YellowPagesSearch: NSObject, ServiceProtocol {
     
     public override init() {
         super.init()
-        dataService.delegate = self
+        dataService.serviceDelegate = self
+        dataService.authDelgate = YellowPagesAuth.sharedInstance
     }
     
     func apiurl() -> String {
@@ -40,18 +41,17 @@ public class YellowPagesSearch: NSObject, ServiceProtocol {
             "format":"json",
             "sort":"distance",
             "listingcount":"10",
-            "key": (YellowPagesAuth.auth()?["key"])!,
             "term":qry.urlEncode(),
             "searchloc":"\(lat),\(lng)",
             "radius":rad
         ]
     }
     
-    func headers() -> [String : String]? {
+    func header() -> [String : AnyObject]? {
         return nil
     }
     
-    func parameters() -> [String : AnyObject]? {
+    func body() -> [String : AnyObject]? {
         return nil
     }
     

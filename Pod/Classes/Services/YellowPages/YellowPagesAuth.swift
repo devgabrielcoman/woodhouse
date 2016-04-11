@@ -9,9 +9,24 @@
 import UIKit
 
 class YellowPagesAuth: NSObject, AuthProtocol {
-    static func auth() -> [String : String]? {
+    
+    static let sharedInstance = YellowPagesAuth()
+    
+    func method() -> AuthMethod {
+        return .SIMPLE
+    }
+    
+    func query() -> [String : AnyObject]? {
         return [
             "key":"qptcklyknd"
         ]
+    }
+    
+    func header() -> [String : AnyObject]? {
+        return nil
+    }
+    
+    func body() -> [String : AnyObject]? {
+        return nil
     }
 }

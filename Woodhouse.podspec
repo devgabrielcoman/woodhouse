@@ -27,4 +27,5 @@ Pod::Spec.new do |s|
   s.dependency 'AlamofireObjectMapper', '~> 2.1'
   s.dependency 'Nosce'
   s.dependency 'KeyPathTransformer'
+  s.dependency 'IDZSwiftCommonCrypto'
 end

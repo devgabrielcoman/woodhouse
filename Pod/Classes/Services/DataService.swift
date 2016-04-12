@@ -9,6 +9,7 @@
 import UIKit
 import Dollar
 import Alamofire
+import IDZSwiftCommonCrypto
 
 /**
  * Auth Type enum
@@ -63,8 +64,8 @@ class DataService: NSObject {
      The main public function of the Data Service
      */
     func execute()  {
-        guard let serviceDelegate = serviceDelegate! as? ServiceProtocol else { return }
-        guard let authDelgate = authDelgate! as? AuthProtocol else { return }
+        guard let serviceDelegate = serviceDelegate  else { return }
+        guard let authDelgate = authDelgate else { return }
         
         // 1. the three vars for the request
         var url = serviceDelegate.apiurl()
@@ -98,12 +99,17 @@ class DataService: NSObject {
         }
         
         // 4. sum data
-        sumParameters(into: &query, from: authQuery)
+        if (authDelgate.method() == .SIMPLE) {
+            sumParameters(into: &query, from: authQuery)
+        } else if (authDelgate.method() == .OAUTH){
+            sumParametersOAuth(into: &query, auth: authQuery, url: url)
+        }
         sumParameters(into: &header, from: authHeader)
         sumParameters(into: &body, from: authBody)
         
+        
         // 5. form the request
-        let finalUrl = url + flattenQuery(query)
+        var finalUrl = url + flattenQuery(query)
         let finalBody = serializeBody(body)
         let URL = NSURL(string: finalUrl)!
         let req = NSMutableURLRequest(URL: URL)
@@ -138,7 +144,7 @@ class DataService: NSObject {
         var queryArray:[String] = []
         
         for key in query.keys {
-            if let value = query[key]! as? AnyObject {
+            if let value = query[key] {
                 queryArray.append("\(key)=\(value)")
             }
         }
@@ -176,5 +182,55 @@ class DataService: NSObject {
         for key in f.keys {
             i[key] = f[key]
         }
+    }
+    
+    /**
+     Adds OAuth 1.0a type parameters to the query parameters already existing
+     
+     - parameter query: a reference to the existing query params that need to be ammended
+     - parameter auth:  auth parameters
+     - parameter url:   the base url (needed for the OAuth 1.0a algorithm)
+     */
+    private func sumParametersOAuth(inout into query: [String:AnyObject], auth: [String:AnyObject], url: String) {
+        // form variables
+        let oauthUrl = url
+        let method = serviceDelegate!.method()
+        let consumerKey = auth["oauth_consumer_key"] as! String
+        let token = auth["oauth_token"] as! String
+        let consumerSecret = auth["oauth_consumer_secret"] as! String
+        let tokenSecret = auth["oauth_token_secret"] as! String
+        
+        // prepare data
+        query["oauth_signature_method"] = "HMAC-SHA1"
+        query["oauth_version"] = "1.0"
+        query["oauth_consumer_key"] = consumerKey
+        query["oauth_token"] = token
+        query["oauth_nonce"] = String.createUUID(6)
+        query["oauth_timestamp"] = "\((NSInteger)(NSDate().timeIntervalSince1970))"
+        
+        // do the magick!
+        let sortedKeysAndValues = (query as? [String:String])!.sort { $0.0 < $1.0 }
+        var encoded: [String] = []
+        for val:(String, String) in sortedKeysAndValues {
+            encoded.append("\(val.0.percentEscape())=\(val.1.percentEscape())")
+        }
+        let parameterString = encoded.joinWithSeparator("&")
+        let signatureBaseString = "\(method)&\(oauthUrl.percentEscape())&\(parameterString.percentEscape())"
+        let signingKey = "\(consumerSecret.percentEscape())&\(tokenSecret.percentEscape())"
+        
+        // new HMAC
+        let sha1DigestArr = HMAC(algorithm:.SHA1, key:signingKey).update(signatureBaseString)?.final()
+        var sha1DigestStr = ""
+        for hma in sha1DigestArr! {
+            let str = NSString(format: "%02X", hma)
+            sha1DigestStr += str as String
+        }
+        let sha1Digest = sha1DigestStr.dataFromHexadecimalString()
+        
+        let base64Encoded = sha1Digest!.base64EncodedDataWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+        let signature = (NSString(data: base64Encoded, encoding: NSUTF8StringEncoding) as! String)
+        
+        // add the signature to the dictionary
+        query["oauth_signature"] = signature
     }
 }

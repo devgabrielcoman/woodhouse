@@ -48,6 +48,12 @@ public class YelpSearch: NSObject, ServiceProtocol {
     }
     
     func process(JSON: AnyObject) -> AnyObject {
+        if  let response = JSON as? [String:AnyObject],
+            let venues = response["businesses"] as? [[String:AnyObject]] {
+            
+            return venues
+        }
+        
         return [:]
     }
     
@@ -57,15 +63,5 @@ public class YelpSearch: NSObject, ServiceProtocol {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
         dataService.execute()
-        
-//        var nonce: String = String.createUUID(6)
-//        let timeInterval = (NSInteger)(NSDate().timeIntervalSince1970)
-//        
-//        let finalUrl = "https://api.yelp.com/v2/search?term=kazan&location=London&cll=51.500152,-0.126236&oauth_consumer_key=KYwum5JY_tOVvObefPzF5A&oauth_token=87uB8dcVpGTVexi6d1vT0A-e--bwpgEn&oauth_signature_method=HMAC-SHA1&oauth_timestamp=\(timeInterval)&oauth_nonce=\(nonce)&oauth_version=1.0&oauth_signature=QBmGFvymKq2ye5g0MTKYhyWEt+o="
-//        print(finalUrl)
-//        Alamofire.request(.GET, finalUrl, parameters: nil, encoding: .JSON).responseJSON { response in
-//            print(response)
-//        }
-        
     }
 }

@@ -51,6 +51,8 @@ public class GoogleDetails: NSObject, ServiceProtocol {
     
     public func search(placeid p: String) {
         placeId = p
-        dataService.execute()
+        dataService.execute() { result in
+            print(result)
+        }
     }
 }

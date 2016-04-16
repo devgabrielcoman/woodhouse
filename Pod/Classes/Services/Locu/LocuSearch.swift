@@ -69,6 +69,16 @@ public class LocuSearch: NSObject, ServiceProtocol {
         if let qry = qry, lat = lat, lng = lng, rad = rad {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
-        dataService.execute()
+        dataService.execute() { result in
+            print(result)
+            print(">>>>><<<<<<<<<>>>>>>>>>><<<<<<<")
+            print(">>>>><<<<<<<<<>>>>>>>>>><<<<<<<")
+            if let venues = result as? [[String:AnyObject]] {
+                $.each(venues) { (venue: [String:AnyObject]) in
+                    print(mapLocuToOMenu(venue))
+                    print("#######################")
+                }
+            }
+        }
     }
 }

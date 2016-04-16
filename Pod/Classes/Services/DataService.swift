@@ -63,7 +63,7 @@ class DataService: NSObject {
     /**
      The main public function of the Data Service
      */
-    func execute()  {
+    func execute(callback: (AnyObject) -> Void)  {
         guard let serviceDelegate = serviceDelegate  else { return }
         guard let authDelgate = authDelgate else { return }
         
@@ -126,7 +126,7 @@ class DataService: NSObject {
             switch response.result {
             case .Success(let JSON):
                 let result = serviceDelegate.process(JSON)
-                print(result)
+                callback(result)
             case .Failure(let error):
                 print("Request failed with error: \(error)")
             }

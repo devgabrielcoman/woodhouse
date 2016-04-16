@@ -68,6 +68,8 @@ public class CityGridSearch: NSObject, ServiceProtocol {
         if let qry = qry, lat = lat, lng = lng, rad = rad {
             self.qry = qry; self.lat = lat; self.lng = lng; self.rad = rad
         }
-        dataService.execute()
+        dataService.execute() { result in
+            print(result)
+        }
     }
 }

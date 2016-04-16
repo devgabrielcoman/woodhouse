@@ -54,6 +54,8 @@ public class CityGridDetails: NSObject, ServiceProtocol {
     
     public func search(phone p: String) {
         self.phone = p
-        dataService.execute()
+        dataService.execute() { result in
+            print(result)
+        }
     }
 }

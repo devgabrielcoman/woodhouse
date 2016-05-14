@@ -71,6 +71,14 @@ public class ZomatoSearch: NSObject, ServiceProtocol {
         }
         dataService.execute() { result in
             print(result)
+            print(">>>>><<<<<<<<<>>>>>>>>>><<<<<<<")
+            print(">>>>><<<<<<<<<>>>>>>>>>><<<<<<<")
+            if let venues = result as? [[String:AnyObject]] {
+                $.each(venues) { (venue: [String:AnyObject]) in
+                    print(mapZomatoToOMenu(venue))
+                    print("#######################")
+                }
+            }
         }
     }
 }

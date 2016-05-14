@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Dollar
 import Alamofire
 
 public class YelpSearch: NSObject, ServiceProtocol {
@@ -64,6 +65,14 @@ public class YelpSearch: NSObject, ServiceProtocol {
         }
         dataService.execute() { result in
             print(result)
+            print(">>>>><<<<<<<<<>>>>>>>>>><<<<<<<")
+            print(">>>>><<<<<<<<<>>>>>>>>>><<<<<<<")
+            if let venues = result as? [[String:AnyObject]] {
+                $.each(venues) { (venue: [String:AnyObject]) in
+                    print(mapYelpToOMenu(venue))
+                    print("#######################")
+                }
+            }
         }
     }
 }

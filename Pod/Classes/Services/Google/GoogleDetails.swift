@@ -53,6 +53,10 @@ public class GoogleDetails: NSObject, ServiceProtocol {
         placeId = p
         dataService.execute() { result in
             print(result)
+            if let result = result as? [String: AnyObject] {
+                print("###################")
+                print(mapGoogleToOMenu(result))
+            }
         }
     }
 }

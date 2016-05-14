@@ -1,8 +1,8 @@
 //
-//  Transform+Zomato+OpenMenu.swift
+//  Transform+Google+OpenMenu.swift
 //  Pods
 //
-//  Created by Gabriel Coman on 17/04/2016.
+//  Created by Gabriel Coman on 18/04/2016.
 //
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import KeyPathTransformer
 import Dollar
 
-func mapZomatoToOMenu(locu: [String:AnyObject]) -> [String:AnyObject] {
+func mapGoogleToOMenu(locu: [String:AnyObject]) -> [String:AnyObject] {
     
     let woodhouse_id = String.createUUID(32)
     let t = Transform<AnyObject>(locu)
@@ -23,8 +23,8 @@ func mapZomatoToOMenu(locu: [String:AnyObject]) -> [String:AnyObject] {
     
     // [OK] restaurant info
     // details subset
-    t["restaurant_info.restaurant_name"] = t["restaurant.name"]
-     t["restaurant_info.brief_description"] = ""
+    t["restaurant_info.restaurant_name"] = t["name"]
+    t["restaurant_info.brief_description"] = ""
     t["restaurant_info.business_type"] = "independent"
     
     // location subset
@@ -32,12 +32,12 @@ func mapZomatoToOMenu(locu: [String:AnyObject]) -> [String:AnyObject] {
     t["restaurant_info.city_town"] = t["restaurant.location.city"]
     t["restaurant_info.country"] = t["restaurant.location.country_id"]
     t["restaurant_info.postal_code"] = t["restaurant.location.zipcode"]
-    t["restaurant_info.latitude"] = t["restaurant.location.latitude"]
-    t["restaurant_info.longitude"] = t["restaurant.location.longitude"]
+    t["restaurant_info.latitude"] = t["geometry.location.lat"]
+    t["restaurant_info.longitude"] = t["geometry.location.lng"]
     
     // contact subset
-    t["restaurant_info.phone"] = t["restaurant.phone_numbers"]
-    t["restaurant_info.website_url"] = t["restaurant.url"]
+    t["restaurant_info.phone"] = t["formatted_phone_number"]
+    t["restaurant_info.website_url"] = t["website"]
     t["restaurant_info.omf_file_url"] = "http://sa-test-moat.herokuapp.com/static/sample.xml"
     
     // [OK] Environment
